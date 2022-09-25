@@ -1,0 +1,37 @@
+{
+  "alias": "app-question-classification",
+  "automation_alias": "script",
+  "automation_uid": "5b4e0237da074764",
+  "cache": true,
+  "deps": [
+    {
+      "tags": "set,echo-off,win"
+    },
+    {
+      "tags": "get,sys-utils-cm"
+    },
+    {
+      "tags": "get,preprocessed-dataset,topic-classification"
+    },
+    {
+      "tags": "ml-model,question-classification"
+    }
+  ],
+  "post_deps": [
+    {
+      "tags": "postprocess,question-classification"
+    }
+  ],
+  "env": {
+  },
+  "new_env_only_keys": [
+  ],
+  "tags": [
+    "app",
+    "question-classification",
+    "topic-classification",
+    "go",
+    "question-topic"
+  ],
+  "uid": "f559634052574b50"
+}
