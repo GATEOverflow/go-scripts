@@ -24,7 +24,8 @@
     "go",
     "qa",
     "original",
-    "question-topic"
+    "question-topic",
+    "train"
   ],
   "uid": "e6d281efd6864fc6",
   "variations": {
@@ -44,14 +45,14 @@
       "env": {
         "CM_DATASET_DEPARTMENT": "cse",
         "CM_DATASET_SIZE": "1000",
-        "CM_IMAGENET_FULL": "yes"
+        "CM_DATASET_FULL": "yes"
       }
     },
     "full": {
       "env": {
         "CM_DATASET_SIZE": "1000",
         "CM_DATASET_VER": "2022",
-        "CM_IMAGENET_FULL": "yes"
+        "CM_DATASET_FULL": "yes"
       }
     }
   }

@@ -13,5 +13,6 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
+    env['CM_DATASET_TRAIN_PATH'] = os.path.join(os.getcwd(),"train.csv")
 
-    return {'return':0, 'version':version}
+    return {'return':0}

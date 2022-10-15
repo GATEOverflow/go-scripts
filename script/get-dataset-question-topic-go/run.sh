@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-echo "CM_DATASET_PATH=$PWD/questions.csv" > tmp-run-env.out
+cp ${CM_TMP_CURRENT_SCRIPT_PATH}/data/train.csv .
