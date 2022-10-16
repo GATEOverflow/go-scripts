@@ -7,15 +7,12 @@
   "deps": [
     {
       "tags": "set,echo-off,win"
-    },
-    {
-      "tags": "get,sys-utils-cm"
     }
   ],
   "env": {
     "CM_DATASET": "QUESTION-TOPIC"
   },
-  "new_env_only_keys": [
+  "new_env_keys": [
     "CM_DATASET_*"
   ],
   "tags": [

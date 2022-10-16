@@ -1,5 +1,5 @@
 {
-  "alias": "preprocess-dataset-question-topic-go",
+  "alias": "get-preprocessed-dataset-question-topic-go/",
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
@@ -8,16 +8,13 @@
       "tags": "set,echo-off,win"
     },
     {
-      "tags": "get,sys-utils-cm"
-    },
-    {
       "tags": "get,dataset,original,question-topic,go"
     }
   ],
   "env": {
     "CM_PREPROCESSED_DATASET": "QUESTION-TOPIC"
   },
-  "new_env_only_keys": [
+  "new_env_keys": [
     "CM_PREPROCESSED_DATASET_*"
   ],
   "tags": [
