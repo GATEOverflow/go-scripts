@@ -3,6 +3,7 @@
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
+  "default_variation": "full",
   "deps": [
     {
       "tags": "set,echo-off,win"
@@ -11,10 +12,16 @@
       "tags": "get,sys-utils-cm"
     },
     {
-      "tags": "get,preprocessed-dataset,topic-classification"
+      "tags": "get,dataset,original,question-topic,go"
     },
     {
-      "tags": "ml-model,question-classification"
+      "tags": "get,preprocessed,dataset,go,qa,question-topic"
+    },
+    {
+      "tags": "get,dataset,go,qa,question-topic,train-model"
+    },
+    {
+      "tags": "get, ml-model, question-classification, go, qa, question-topic"
     }
   ],
   "post_deps": [
@@ -23,8 +30,10 @@
     }
   ],
   "env": {
+    "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_only_keys": [
+    "CM_DATASET_OUTPUT_MODEL*"
   ],
   "tags": [
     "app",
@@ -33,5 +42,33 @@
     "go",
     "question-topic"
   ],
-  "uid": "f559634052574b50"
+  "uid": "f559634052574b50",
+  "variations": {
+    "cse-1": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "1"
+      }
+    },
+    "cse-500": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "500"
+      }
+    },
+    "cse-full": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "1000",
+        "CM_IMAGENET_FULL": "yes"
+      }
+    },
+    "full": {
+      "env": {
+        "CM_DATASET_SIZE": "1000",
+        "CM_DATASET_VER": "2022",
+        "CM_IMAGENET_FULL": "yes"
+      }
+    }
+  }
 }

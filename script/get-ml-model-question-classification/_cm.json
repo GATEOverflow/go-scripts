@@ -3,18 +3,26 @@
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
-  "default_variation": "2012-500",
+  "default_variation": "full",
   "deps": [
     {
       "tags": "set,echo-off,win"
     },
     {
-      "tags": "get,sys-utils-cm"
+      "tags": "get,dataset,original,question-topic,go"
+    },
+    {
+      "tags": "get,preprocessed,dataset,go,qa,question-topic"
+    },
+    {
+      "tags": "get,dataset,go,qa,question-topic,train-model"
     }
   ],
   "env": {
+    "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_only_keys": [
+    "CM_DATASET_SELECTED_MODEL_*"
   ],
   "tags": [
     "get",
@@ -26,5 +34,31 @@
   ],
   "uid": "5562e8fa529f49bd",
   "variations": {
+    "cse-1": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "1"
+      }
+    },
+    "cse-500": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "500"
+      }
+    },
+    "cse-full": {
+      "env": {
+        "CM_DATASET_DEPARTMENT": "cse",
+        "CM_DATASET_SIZE": "1000",
+        "CM_IMAGENET_FULL": "yes"
+      }
+    },
+    "full": {
+      "env": {
+        "CM_DATASET_SIZE": "1000",
+        "CM_DATASET_VER": "2022",
+        "CM_IMAGENET_FULL": "yes"
+      }
+    }
   }
 }

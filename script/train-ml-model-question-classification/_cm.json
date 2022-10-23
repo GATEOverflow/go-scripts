@@ -3,27 +3,31 @@
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
-  "default_variation": "2012-500",
+  "default_variation": "full",
   "deps": [
     {
       "tags": "set,echo-off,win"
     },
     {
-      "tags": "get,sys-utils-cm"
+      "tags": "get,dataset,original,question-topic,go"
+    },
+    {
+      "tags": "get,preprocessed,dataset,go,qa,question-topic"
     }
   ],
   "env": {
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_only_keys": [
-    "CM_DATASET_*"
+    "CM_DATASET_TRAINED_MODEL*"
   ],
   "tags": [
     "get",
     "dataset",
     "go",
     "qa",
-    "question-topic"
+    "question-topic",
+    "train-model"
   ],
   "uid": "25a2468433a24e3f",
   "variations": {
