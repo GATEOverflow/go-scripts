@@ -18,7 +18,7 @@ def preprocess(i):
     env = i['env']
 
     testfile = get_data_file(env['CM_PREPROCESSED_DATASET_TEST_PATH'])
-    loaded_model = pickle.load(open(env['CM_DATASET_SELECTED_MODEL_#1'], 'rb'))
+    loaded_model = pickle.load(open(env['CM_ML_MODEL'], 'rb'))
     p=loaded_model.predict(env['CM_DATASET_TRAINED_MODEL_TFIDQ'].transform(testfile['Question']))
     testfile['Tag'] = p
     print(testfile)
@@ -29,5 +29,5 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
-    env['CM_DATASET_OUTPUT_MODEL_ANSWER'] = os.path.join(os.getcwd(),"Predicted_answers.csv")
+    env['CM_ML_MODEL_ANSWER'] = os.path.join(os.getcwd(),"Predicted_answers.csv")
     return {'return':0}

@@ -1,5 +1,5 @@
 {
-  "alias": "app-question-classification",
+  "alias": "train-ml-model-question-classification-rh",
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
@@ -13,33 +13,24 @@
     },
     {
       "tags": "get,preprocessed,dataset,go,qa,question-topic"
-    },
-    {
-      "tags": "get,dataset,go,qa,question-topic,train-model"
-    },
-    {
-      "tags": "get, ml-model, question-classification, go, qa, question-topic"
-    }
-  ],
-  "post_deps": [
-    {
-      "tags": "postprocess,question-classification"
     }
   ],
   "env": {
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_only_keys": [
-    "CM_DATASET_OUTPUT_MODEL*"
+    "CM_DATASET_TRAINED_MODEL*"
   ],
   "tags": [
-    "app",
-    "question-classification",
-    "topic-classification",
+    "get",
+    "dataset",
     "go",
-    "question-topic"
+    "qa",
+    "question-topic",
+    "train-model",
+    "ml-model-rh"
   ],
-  "uid": "f559634052574b50",
+  "uid": "25a2468433a24e3f",
   "variations": {
     "cse-1": {
       "env": {

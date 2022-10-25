@@ -1,5 +1,5 @@
 {
-  "alias": "train-ml-model-question-classification",
+  "alias": "train-ml-model-question-classification-rt",
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
@@ -27,9 +27,10 @@
     "go",
     "qa",
     "question-topic",
-    "train-model"
+    "train-model",
+    "ml-model-rt"
   ],
-  "uid": "25a2468433a24e3f",
+  "uid": "aa3003a15aea411d",
   "variations": {
     "cse-1": {
       "env": {

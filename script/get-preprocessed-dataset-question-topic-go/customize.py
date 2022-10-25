@@ -62,6 +62,7 @@ def preprocess(i):
     os_info = i['os_info']
     print("\n\nEntered preprocess!")
     env = i['env']
+    #preprocessing the training file
     trainfile = get_data_file(env['CM_DATASET_TRAIN_PATH'])
     trainfile = rename_column(trainfile, ' Tag', 'Tag')
     trainfile['Question'] = preprocess_text(trainfile['Question'])  
@@ -88,6 +89,6 @@ def postprocess(i):
     env['CM_PREPROCESSED_DATASET_TEST_PATH'] = os.path.join(os.getcwd(),"Preprocessed_test.csv")
     env['CM_PREPROCESSED_DATASET_SOLN_PATH'] = os.path.join(os.getcwd(),"Preprocessed_soln.csv")
 
-    print("The path of the preprocessed training dataset is:"+env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
+    print("  Preprocessed training dataset path:"+env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
 
     return {'return':0}

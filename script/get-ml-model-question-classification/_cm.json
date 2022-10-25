@@ -3,7 +3,7 @@
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
   "cache": true,
-  "default_variation": "full",
+  "default_variation": "rh",
   "deps": [
     {
       "tags": "set,echo-off,win"
@@ -13,9 +13,6 @@
     },
     {
       "tags": "get,preprocessed,dataset,go,qa,question-topic"
-    },
-    {
-      "tags": "get,dataset,go,qa,question-topic,train-model"
     }
   ],
   "env": {
@@ -34,31 +31,25 @@
   ],
   "uid": "5562e8fa529f49bd",
   "variations": {
-    "cse-1": {
+    "rh": {
       "env": {
-        "CM_DATASET_DEPARTMENT": "cse",
-        "CM_DATASET_SIZE": "1"
-      }
+        "CM_ML_MODEL_NAME": "go_1"
+      },
+      "deps":[
+        {
+          "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-rh"
+        }
+      ]
     },
-    "cse-500": {
+    "rt": {
       "env": {
-        "CM_DATASET_DEPARTMENT": "cse",
-        "CM_DATASET_SIZE": "500"
-      }
-    },
-    "cse-full": {
-      "env": {
-        "CM_DATASET_DEPARTMENT": "cse",
-        "CM_DATASET_SIZE": "1000",
-        "CM_IMAGENET_FULL": "yes"
-      }
-    },
-    "full": {
-      "env": {
-        "CM_DATASET_SIZE": "1000",
-        "CM_DATASET_VER": "2022",
-        "CM_IMAGENET_FULL": "yes"
-      }
+        "CM_ML_MODEL_NAME": "go_2"
+      },
+      "deps":[
+        {
+          "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-rt"
+        }
+      ]
     }
   }
 }
