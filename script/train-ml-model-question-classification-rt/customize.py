@@ -1,33 +1,92 @@
-from cmind import utils
-import os
+import torch
+from transformers import RobertaTokenizer
+import numpy as np
+import torch.nn as nn
+from transformers import AutoModel
+from torch.utils.data import random_split
+from transformers import get_linear_schedule_with_warmup
+import json
+import csv
 import pandas as pd
-from sklearn.svm import LinearSVC
-from sklearn.feature_extraction.text import TfidfVectorizer
-import pickle
+import sklearn
+from sklearn.metrics import *
+import warnings
 
-def get_data_file(filename):    
-    dtrain=pd.read_csv(filename,header=0)
-    return dtrain  
+def get_data(testfile, solfile):
+    filename = 'train' + '.csv'
+    with open(filename, 'r') as csvfile:
+        lines = csvfile.readlines()
+    train_x, train_y = [], []
+    categories_train = set()
+    for line in lines:
+        train_x.append(' '.join(line.split(',')[:-1]))
+        train_y.append(line.split(',')[-1][:-1].strip())
+        categories_train.add(line.split(',')[-1][:-1].strip())
+        
+    train_x, train_y = train_x[1:], train_y[1:]
+    
+    filename = 'solution' + '.csv'
+    with open(filename, 'r') as csvfile:
+        lines = csvfile.readlines()
+    test_x, test_y = [], []
+    categories_test = set()
+    for line in lines:
+        test_x.append(' '.join(line.split(',')[:-1]))
+        test_y.append(line.split(',')[-1][:-1].strip())
+        categories_test.add(line.split(',')[-1][:-1].strip())
+    
+    test_x, test_y = test_x[1:], test_y[1:]
+    cat_to_idx = {}
+    classes = 0
+    for cat in categories_train.union(categories_test):
+        if cat != 'Tag':
+            cat_to_idx[cat] = classes
+            classes += 1
+    for i in range(len(train_y)):
+        train_y[i] = cat_to_idx[train_y[i]]
+    for i in range(len(test_y)):
+        test_y[i] = cat_to_idx[test_y[i]]
+        
+    return train_x, train_y, test_x, test_y, cat_to_idx, categories_train, categories_test, classes
 
-#training phase of LinearSVC model as we have seen earlier that it work best
-def rohan_text_classificattion_training(train_Q,train_label, tfidf_vect):
-    X_train_tfidf = tfidf_vect.fit_transform(train_Q)
-    model=LinearSVC(penalty='l2',C=2.8).fit(tfidf_vect.transform(train_Q),train_label)
-    return model
+def preprocess(x):
+    """
+    This methods performs data preprocessing - 
+    removing stop words, lowercasing, removing redundant whitespaces
+    """
+    import spacy    
+    nlp = spacy.load("en_core_web_sm")
+    #nlp.Defaults.stop_words
+    x_new = []
+    for text in x:
+        my_doc = nlp(text)
+        # Create list of word tokens
+        token_list = []
+        for token in my_doc:
+            token_list.append(token.text)
 
-def create_model_rohan(train_Q, train_label):
-    #tfidf initialization
-    tfidf_vect = TfidfVectorizer(min_df=2,norm='l2',ngram_range=(1,2),stop_words='english',sublinear_tf=True,encoding='latin-1')
-    #model creation 
-    model = rohan_text_classificattion_training(train_Q, train_label, tfidf_vect)
-    return model, tfidf_vect
+        from spacy.lang.en.stop_words import STOP_WORDS
+        # Create list of word tokens after removing stopwords
+        filtered_sentence = [] 
+        for word in token_list:
+            lexeme = nlp.vocab[word]
+            if lexeme.is_stop == False:
+                filtered_sentence.append(word) 
+
+        text = " ".join(filtered_sentence)
+        text = text.lower()
+        text = text.replace('_', '')
+        text = " ".join(text.split())
+        x_new.append(text)
+    return x_new
+
 
 def preprocess(i):
 
     os_info = i['os_info']
 
     env = i['env']
-    trainfile = get_data_file(env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
+    trainfile = get_data(env['CM_PREPROCESSED_DATASET_TRAIN_PATH'],)
     model, tfidf_vect = create_model_rohan(trainfile['Question'], trainfile['Tag'])
     env['CM_DATASET_TRAINED_MODEL_TFIDQ'] = tfidf_vect
     pickle.dump(model, open("topicclassfication_#1.sav", 'wb'))
