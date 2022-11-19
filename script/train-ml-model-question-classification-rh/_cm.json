@@ -18,7 +18,7 @@
   "env": {
     "CM_DATASET": "QUESTION-TOPIC"
   },
-  "new_env_only_keys": [
+  "new_env_keys": [
     "CM_DATASET_TRAINED_MODEL*"
   ],
   "tags": [
