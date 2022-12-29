@@ -19,7 +19,9 @@
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_keys": [
-    "CM_DATASET_SELECTED_MODEL_*"
+    "CM_DATASET_SELECTED_MODEL_*",
+    "CM_ML_MODEL",
+    "CM_DATASET_TRAINED_MODEL_TFIDQ"
   ],
   "tags": [
     "get",

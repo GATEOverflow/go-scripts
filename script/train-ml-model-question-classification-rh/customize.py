@@ -2,6 +2,8 @@ from cmind import utils
 import os
 import pandas as pd
 from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 
@@ -12,7 +14,9 @@ def get_data_file(filename):
 #training phase of LinearSVC model as we have seen earlier that it work best
 def rohan_text_classificattion_training(train_Q,train_label, tfidf_vect):
     X_train_tfidf = tfidf_vect.fit_transform(train_Q)
-    model=LinearSVC(penalty='l2',C=2.8).fit(tfidf_vect.transform(train_Q),train_label)
+    # model=LinearSVC(penalty='l2',C=2.8).fit(tfidf_vect.transform(train_Q),train_label)
+    base_svc=SVC(C=2.8)
+    model = CalibratedClassifierCV(base_svc).fit(tfidf_vect.transform(train_Q),train_label)
     return model
 
 def create_model_rohan(train_Q, train_label):
@@ -29,7 +33,7 @@ def preprocess(i):
     env = i['env']
     trainfile = get_data_file(env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
     model, tfidf_vect = create_model_rohan(trainfile['Question'], trainfile['Tag'])
-    env['CM_DATASET_TRAINED_MODEL_TFIDQ'] = tfidf_vect
+    pickle.dump(tfidf_vect, open("tfidf_obj", 'wb'))
     pickle.dump(model, open("model_rh.sav", 'wb'))
     print("model created!")
 
@@ -37,9 +41,9 @@ def preprocess(i):
 
 
 def postprocess(i):
-
     env = i['env']
     env['CM_ML_MODEL'] = os.path.join(os.getcwd(),"model_rh.sav")
+    env['CM_DATASET_TRAINED_MODEL_TFIDQ'] = os.path.join(os.getcwd(),"tfidf_obj")
     print("Trained model path is:"+env['CM_ML_MODEL'])
 
     return {'return':0}

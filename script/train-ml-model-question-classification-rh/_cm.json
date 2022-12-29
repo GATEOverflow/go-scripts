@@ -19,7 +19,8 @@
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_keys": [
-    "CM_DATASET_TRAINED_MODEL*"
+    "CM_DATASET_TRAINED_MODEL*",
+    "CM_ML_MODEL*"
   ],
   "tags": [
     "get",

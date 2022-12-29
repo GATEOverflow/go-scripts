@@ -66,7 +66,8 @@ def preprocess(i):
     #preprocessing the training file
     trainfile = get_data_file(env['CM_DATASET_TRAIN_PATH'])
     trainfile = rename_column(trainfile, ' Tag', 'Tag')
-    trainfile['Question'] = preprocess_text(trainfile['Question'])  
+    print(trainfile['Tag'].value_counts(ascending=True))  
+    trainfile['Question'] = preprocess_text(trainfile['Question'])
     savefile(trainfile, "train")
     print("File saved\n\n")
     #for preprocessing the test file

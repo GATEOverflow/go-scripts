@@ -6,7 +6,7 @@ def preprocess(i):
     os_info = i['os_info']
 
     env = i['env']
-    print(env['CM_ML_MODEL'])  #CM_ML_MODEL
+    print("get ml model:"+env['CM_ML_MODEL'])  #CM_ML_MODEL
     return {'return':0}
 
 
