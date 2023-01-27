@@ -54,6 +54,16 @@
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rt"
         }
       ]
+    },
+    "setfit": {
+      "env": {
+        "CM_ML_MODEL_NAME": "go_3"
+      },
+      "deps":[
+        {
+          "tags": "get, ml-model, question-classification, go, qa, question-topic, _setfit"
+        }
+      ]
     }
   }
 }

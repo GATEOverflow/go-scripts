@@ -15,7 +15,7 @@ def get_data_file(filename):
 def rohan_text_classificattion_training(train_Q,train_label, tfidf_vect):
     X_train_tfidf = tfidf_vect.fit_transform(train_Q)
     # model=LinearSVC(penalty='l2',C=2.8).fit(tfidf_vect.transform(train_Q),train_label)
-    base_svc=SVC(C=2.8)
+    base_svc=SVC(C=8)
     model = CalibratedClassifierCV(base_svc).fit(tfidf_vect.transform(train_Q),train_label)
     return model
 

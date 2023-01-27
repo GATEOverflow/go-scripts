@@ -52,6 +52,16 @@
           "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-rt"
         }
       ]
+    },
+    "setfit": {
+      "env": {
+        "CM_ML_MODEL_NAME": "go_3"
+      },
+      "deps":[
+        {
+          "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-setfit"
+        }
+      ]
     }
   }
 }

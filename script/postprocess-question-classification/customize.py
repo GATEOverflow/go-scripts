@@ -23,5 +23,6 @@ def postprocess(i):
         if(soln[i] in model_soln[i]):
             correct = correct + 1
     print("\tAccuracy by brute force approach is:"+str(correct/len(model_soln)))
-    print("\n\tAccuracy of the result produced by model #1:"+str(f1_score(model_soln_single_tag, soln, average='micro'))+"\n")
+    #should execute after converting the label back to the tag
+    # print("\n\tAccuracy of the result produced by model #1:"+str(f1_score(model_soln_single_tag, soln, average='micro'))+"\n")
     return {'return':0}
