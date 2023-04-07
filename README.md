@@ -71,7 +71,7 @@ ___
     <details>
     <summary>Click here to expand this section.</summary>
 
-    * `_rh_`
+    * `_rh`
       - Environment variables:
         - *CM_ML_MODEL_NAME*: `go_1`
       - Workflow:
