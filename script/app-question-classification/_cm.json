@@ -37,7 +37,8 @@
   "variations": {
     "rh": {
       "env": {
-        "CM_ML_MODEL_NAME": "go_1"
+        "CM_ML_MODEL_NAME": "go_1",
+        "CM_DATASET_PATH": "NIL"
       },
       "deps":[
         {
@@ -47,11 +48,22 @@
     },
     "rt": {
       "env": {
-        "CM_ML_MODEL_NAME": "go_2"
+        "CM_ML_MODEL_NAME": "go_2",
+        "CM_DATASET_PATH": "NIL"
       },
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rt"
+        }
+      ]
+    },
+    "path.#":{
+      "env": {
+        "CM_DATASET_PATH": "#"
+      },
+      "deps":[
+        {
+          "tags": "get, ml-model, question-classification, go, qa, question-topic, _rh"
         }
       ]
     }

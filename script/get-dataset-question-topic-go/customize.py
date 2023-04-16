@@ -13,8 +13,13 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
-    env['CM_DATASET_TRAIN_PATH'] = os.path.join(os.getcwd(),"train.csv")
-    env['CM_DATASET_TEST_PATH'] = os.path.join(os.getcwd(),"test.csv")
-    env['CM_DATASET_SOLUTION_PATH'] = os.path.join(os.getcwd(),"solution.csv")
+    if env['CM_DATASET_PATH'] == "NIL":
+        env['CM_DATASET_TRAIN_PATH'] = os.path.join(os.getcwd(),"train.csv")
+        env['CM_DATASET_TEST_PATH'] = os.path.join(os.getcwd(),"test.csv")
+        env['CM_DATASET_SOLUTION_PATH'] = os.path.join(os.getcwd(),"solution.csv")
+    else:
+        env['CM_DATASET_TRAIN_PATH'] = os.path.join(env['CM_DATASET_PATH'], "train.csv")
+        env['CM_DATASET_TEST_PATH'] =os.path.join(env['CM_DATASET_PATH'], "test.csv")
+        env['CM_DATASET_SOLUTION_PATH'] = os.path.join(env['CM_DATASET_PATH'], "solution.csv") 
 
     return {'return':0}
