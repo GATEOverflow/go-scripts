@@ -13,7 +13,20 @@
     },
     {
       "tags": "get,preprocessed,dataset,go,qa,question-topic"
+    },
+    {
+      "tags": "get,generic-python-lib,_pandas"
+    },
+    {
+      "tags": "get,generic-python-lib,_tqdm"
+    },
+    {
+      "names": [
+        "scikit-learn"
+      ],
+      "tags": "get,generic-python-lib,sklearn"
     }
+
   ],
   "post_deps": [
     {
