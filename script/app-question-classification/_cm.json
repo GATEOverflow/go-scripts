@@ -6,15 +6,50 @@
   "default_variation": "rh",
   "deps": [
     {
-      "tags": "set,echo-off,win"
+      "names": [
+        "python3",
+        "python"
+      ],
+      "tags": "get,python3"
     },
     {
-      "tags": "get,dataset,original,question-topic,go"
+      "names": [
+        "original-dataset"
+      ],
+      "tags": "get,dataset,speech-recognition,librispeech,original"
     },
     {
-      "tags": "get,preprocessed,dataset,go,qa,question-topic"
+      "names": [
+        "inference-src"
+      ],
+      "tags": "mlperf,mlcommons,inference,source,src"
+    },
+    {
+      "names": [
+        "sox"
+      ],
+      "tags": "get,sys-util,generic,_sox"
+    },
+    {
+      "names": [
+        "pandas"
+      ],
+      "tags": "get,generic-python-lib,_pandas"
+    },
+    {
+      "names": [
+        "tqdm"
+      ],
+      "tags": "get,generic-python-lib,_tqdm"
+    },
+    {
+      "names": [
+        "scikit-learn"
+      ],
+      "tags": "get,generic-python-lib,_sklearn"
     }
   ],
+
   "post_deps": [
     {
       "tags": "postprocess,question-classification"
