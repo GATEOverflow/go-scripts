@@ -18,7 +18,7 @@ def create_trainer(base_model, train_dataset, eval_dataset):
         loss_class=CosineSimilarityLoss,
         metric="accuracy",
         batch_size=16,
-        num_iterations=1, # The number of text pairs to generate for contrastive learning
+        num_iterations=20, # The number of text pairs to generate for contrastive learning
         num_epochs=1, # The number of epochs to use for contrastive learning
         column_mapping={"Question": "text", "label": "label"} # Map dataset columns to text/label expected by trainer
     )
