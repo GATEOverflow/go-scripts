@@ -13,13 +13,26 @@
     },
     {
       "tags": "get,preprocessed,dataset,go,qa,question-topic"
+    },
+    {
+      "tags": "get,generic-python-lib,_pandas"
+    },
+    {
+      "tags": "get,generic-python-lib,_numpy"
+    },
+    {
+      "tags": "get,generic-python-lib,_setfit"
+    },
+    {
+      "tags": "get,generic-python-lib,_matplotlib"
     }
   ],
   "env": {
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_keys": [
-    "CM_DATASET_TRAINED_MODEL*"
+    "CM_DATASET_TRAINED_MODEL*",
+    "CM_ML_MODEL*"
   ],
   "tags": [
     "get",

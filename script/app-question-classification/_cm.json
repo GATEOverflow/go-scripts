@@ -38,7 +38,8 @@
     "rh": {
       "env": {
         "CM_ML_MODEL_NAME": "go_1",
-        "CM_DATASET_PATH": "NIL"
+        "CM_DATASET_PATH": "NIL",
+        "CM_SETFIT_DATASET": "NIL"
       },
       "deps":[
         {
@@ -49,7 +50,8 @@
     "rt": {
       "env": {
         "CM_ML_MODEL_NAME": "go_2",
-        "CM_DATASET_PATH": "NIL"
+        "CM_DATASET_PATH": "NIL",
+        "CM_SETFIT_DATASET": "NIL"
       },
       "deps":[
         {
@@ -59,11 +61,23 @@
     },
     "path.#":{
       "env": {
-        "CM_DATASET_PATH": "#"
+        "CM_DATASET_PATH": "#",
+        "CM_SETFIT_DATASET": "NIL"
       },
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rh"
+        }
+      ]
+    },
+    "setfit_dataset_path.#":{
+      "env": {
+        "CM_SETFIT_DATASET": "#",
+        "CM_DATASET_PATH": "#"
+      },
+      "deps":[
+        {
+          "tags": "get, ml-model, question-classification, go, qa, question-topic, _rt"
         }
       ]
     }
