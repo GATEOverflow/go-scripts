@@ -34,9 +34,9 @@ def preprocess(i):
     eval_dataset = dataset["validation"]
     base_model = SetFitModel.from_pretrained("sentence-transformers/paraphrase-mpnet-base-v2", multitarget=True)
     trainer = create_trainer(base_model, train_dataset, eval_dataset)
-    #trainer.train()
-    # metrics = trainer.evaluate()
-    # print(metrics)
+    trainer.train()
+    metrics = trainer.evaluate()
+    print(metrics)
     base_model._save_pretrained("qn_classification_setfitModel")
 
     return {'return':0}
@@ -45,7 +45,7 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
-    env['CM_ML_MODEL'] = os.path.join(os.getcwd(),"qn_classification_setfitMode")
+    env['CM_ML_MODEL'] = os.path.join(os.getcwd(),"qn_classification_setfitModel")
     print("Trained model path is:"+env['CM_ML_MODEL'])
 
     return {'return':0}
