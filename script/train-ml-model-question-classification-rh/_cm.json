@@ -6,7 +6,11 @@
   "default_variation": "full",
   "deps": [
     {
-      "tags": "set,echo-off,win"
+      "names": [
+        "python",
+        "python3"
+      ],
+      "tags": "get,python3"
     },
     {
       "tags": "get,dataset,original,question-topic,go"
