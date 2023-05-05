@@ -19,7 +19,7 @@ jobs:
       id: getfile
       run: |
         echo "files=$(git diff --name-only ${{ github.event.before }} | xargs)" >> $GITHUB_OUTPUT
-    - name: echo output
+    - name: Update README
       run: |
         echo ${{ steps.getfile.outputs.files }}
         for file in ${{ steps.getfile.outputs.files }}; do
@@ -32,7 +32,6 @@ jobs:
         FOLDER=`cm find repo GATEOverflow@topic-classification | cut -d' ' -f3`
         cd $FOLDER
         echo "Changed to $FOLDER"
-        #USER=${{ github.repository_owner }}
 
         USER=admin
         EMAIL=admin@gateoverflow.org
