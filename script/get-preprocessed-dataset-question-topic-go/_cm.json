@@ -9,7 +9,13 @@
       "tags": "set,echo-off,win"
     },
     {
+      "tags": "get,python3"
+    },
+    {
       "tags": "get,dataset,original,question-topic,go"
+    },
+    {
+      "tags": "get,generic-python-lib,_tqdm"
     }
   ],
   "env": {
