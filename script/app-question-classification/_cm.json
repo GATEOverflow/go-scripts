@@ -21,9 +21,6 @@
       "tags": "get,generic-python-lib,_numpy"
     },
     {
-      "tags": "get,generic-python-lib,_datasets"
-    },
-    {
       "tags": "get,generic-python-lib,_torch"
     },
     {
@@ -33,7 +30,7 @@
       "names": [
         "scikit-learn"
       ],
-      "tags": "get,generic-python-lib,sklearn"
+      "tags": "get,generic-python-lib,_scikit-learn"
     }
 
   ],
