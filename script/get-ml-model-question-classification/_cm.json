@@ -42,7 +42,7 @@
       },
       "deps":[
         {
-          "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-rh"
+          "tags": "go,qa,question-topic,train-model,ml-model-rh"
         }
       ]
     },
@@ -52,7 +52,7 @@
       },
       "deps":[
         {
-          "tags": "get,dataset,go,qa,question-topic,train-model,ml-model-rt"
+          "tags": "go,qa,question-topic,train-model,ml-model-rt"
         }
       ]
     }

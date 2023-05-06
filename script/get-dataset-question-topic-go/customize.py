@@ -13,9 +13,9 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
-    if env['CM_SETFIT_DATASET'] == "NIL":
+    if 'CM_SETFIT_DATASET' not in env:
         env['CM_SETFIT_DATASET'] = "ANANDHU-SCT/TOPIC_CLASSIFICATION"
-    if env['CM_DATASET_PATH'] == "NIL":
+    if 'CM_DATASET_PATH' not in env:
         env['CM_DATASET_TRAIN_PATH'] = os.path.join(os.getcwd(),"train.csv")
         env['CM_DATASET_TEST_PATH'] = os.path.join(os.getcwd(),"test.csv")
         env['CM_DATASET_SOLUTION_PATH'] = os.path.join(os.getcwd(),"solution.csv")
