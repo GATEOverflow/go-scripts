@@ -110,15 +110,15 @@ ___
         - *CM_ML_MODEL_NAME*: `go_1`
       - Workflow:
         1. ***Read "deps" on other CM scripts***
-           * get,dataset,go,qa,question-topic,train-model,ml-model-rh
-             - *Warning: no scripts found*
+           * go,qa,question-topic,train-model,ml-model-rh
+             - CM script: [train-ml-model-question-classification-rh](https://github.com/GATEOverflow/topic-classification/tree/master/script/train-ml-model-question-classification-rh)
     * `_rt`
       - Environment variables:
         - *CM_ML_MODEL_NAME*: `go_2`
       - Workflow:
         1. ***Read "deps" on other CM scripts***
-           * get,dataset,go,qa,question-topic,train-model,ml-model-rt
-             - *Warning: no scripts found*
+           * go,qa,question-topic,train-model,ml-model-rt
+             - CM script: [train-ml-model-question-classification-rt](https://github.com/GATEOverflow/topic-classification/tree/master/script/train-ml-model-question-classification-rt)
 
     </details>
 

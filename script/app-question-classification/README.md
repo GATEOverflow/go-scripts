@@ -105,6 +105,13 @@ ___
     <details>
     <summary>Click here to expand this section.</summary>
 
+    * `_path.#`
+      - Environment variables:
+        - *CM_DATASET_PATH*: `#`
+      - Workflow:
+        1. ***Read "deps" on other CM scripts***
+           * get, ml-model, question-classification, go, qa, question-topic, _rh
+             - CM script: [get-ml-model-question-classification](https://github.com/GATEOverflow/topic-classification/tree/master/script/get-ml-model-question-classification)
     * **`_rh`** (default)
       - Environment variables:
         - *CM_ML_MODEL_NAME*: `go_1`
@@ -115,6 +122,13 @@ ___
     * `_rt`
       - Environment variables:
         - *CM_ML_MODEL_NAME*: `go_2`
+      - Workflow:
+        1. ***Read "deps" on other CM scripts***
+           * get, ml-model, question-classification, go, qa, question-topic, _rt
+             - CM script: [get-ml-model-question-classification](https://github.com/GATEOverflow/topic-classification/tree/master/script/get-ml-model-question-classification)
+    * `_setfit_dataset_path.#`
+      - Environment variables:
+        - *CM_SETFIT_DATASET*: `#`
       - Workflow:
         1. ***Read "deps" on other CM scripts***
            * get, ml-model, question-classification, go, qa, question-topic, _rt
@@ -143,12 +157,23 @@ ___
 <summary>Click here to expand this section.</summary>
 
   1. ***Read "deps" on other CM scripts from [meta](https://github.com/GATEOverflow/topic-classification/tree/master/script/app-question-classification/_cm.json)***
-     * set,echo-off,win
-       - CM script: [set-echo-off-win](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/set-echo-off-win)
      * get,dataset,original,question-topic,go
        - CM script: [get-dataset-question-topic-go](https://github.com/GATEOverflow/topic-classification/tree/master/script/get-dataset-question-topic-go)
      * get,preprocessed,dataset,go,qa,question-topic
        - CM script: [get-preprocessed-dataset-question-topic-go/](https://github.com/GATEOverflow/topic-classification/tree/master/script/get-preprocessed-dataset-question-topic-go/)
+     * get,generic-python-lib,_datasets
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
+     * get,generic-python-lib,_pandas
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
+     * get,generic-python-lib,_numpy
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
+     * get,generic-python-lib,_torch
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
+     * get,generic-python-lib,_tqdm
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
+     * get,generic-python-lib,_scikit-learn
+       * CM names: `--adr.['scikit-learn']...`
+       - CM script: [get-generic-python-lib](https://github.com/mlcommons/ck/tree/master/cm-mlops/script/get-generic-python-lib)
   1. ***Run "preprocess" function from [customize.py](https://github.com/GATEOverflow/topic-classification/tree/master/script/app-question-classification/customize.py)***
   1. Read "prehook_deps" on other CM scripts from [meta](https://github.com/GATEOverflow/topic-classification/tree/master/script/app-question-classification/_cm.json)
   1. ***Run native script if exists***
