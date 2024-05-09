@@ -1,4 +1,8 @@
 #!/bin/bash
-${CM_PYTHON_BIN_WITH_PATH} ${CM_TMP_CURRENT_SCRIPT_PATH}/process.py
-test $? -eq 0 || exit 1
-echo "CM_PREPROCESSED_DATASET_PATH=$PWD/questions.csv" > tmp-run-env.out
+
+echo "$CM_PYTHON_BIN_WITH_PATH" "$CM_TMP_CURRENT_SCRIPT_PATH/process.py"
+"$CM_PYTHON_BIN_WITH_PATH" "$CM_TMP_CURRENT_SCRIPT_PATH/process.py"
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+echo "CM_DATASET_TAGS=$(pwd)/tagList.json" > tmp-run-env.out
