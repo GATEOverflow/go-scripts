@@ -5,9 +5,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 import csv
 import numpy as np
-from setfit import SetFitModel
+
 from datasets import load_dataset
-import torch
+
 import json
 from tqdm import tqdm
 
@@ -46,6 +46,8 @@ def getOpenAIresponse(openAIClient, content):
 
 
 if(os.environ['CM_ML_MODEL_NAME'] == "go_2"):
+    from setfit import SetFitModel
+    import torch
     dataset = load_dataset("ANANDHU-SCT/TOPIC_CLASSIFICATION")
     model = SetFitModel.from_pretrained(os.environ['CM_ML_MODEL'])
     probs = model.predict_proba(dataset['test']['Question'])
