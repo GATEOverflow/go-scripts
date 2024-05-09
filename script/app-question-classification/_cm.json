@@ -31,9 +31,6 @@
       "tags": "get,generic-python-lib,_numpy"
     },
     {
-      "tags": "get,generic-python-lib,_torch"
-    },
-    {
       "tags": "get,generic-python-lib,_tqdm"
     },
     {
@@ -71,6 +68,9 @@
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rh"
+        },
+        {
+          "tags": "get,generic-python-lib,_torch"
         }
       ]
     },
@@ -81,6 +81,9 @@
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rt"
+        },
+        {
+          "tags": "get,generic-python-lib,_torch"
         }
       ]
     },
