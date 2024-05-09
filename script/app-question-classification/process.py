@@ -72,7 +72,6 @@ elif(os.environ['CM_ML_MODEL_NAME'] == "GPT3.5"):
     testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
     tagListPath = os.environ["CM_DATASET_TAGS"]
     tagListPath=r"{}".format(tagListPath)
-    print(tagListPath)
     openAIClient = getOpenAIClient(os.environ["OPENAI_API_KEY"])
     with open(tagListPath, 'r') as file:
         # Load the JSON data
