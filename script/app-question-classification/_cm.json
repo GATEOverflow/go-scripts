@@ -101,9 +101,27 @@
         }
       ]
     },
+    "LLMCLAUDE_SONNET":{
+      "env":{
+        "CM_ML_MODEL_NAME": "CLAUDE_SONNET"
+      },
+      "deps":[
+        {
+          "tags": "get,tags,preprocessed,dataset"
+        },
+        {
+          "tags": "get,generic-python-lib,_anthropic"
+        }
+      ]
+    },
     "OPENAI_API_KEY.#":{
       "env":{
         "OPENAI_API_KEY" : "#"
+      }
+    },
+    "ANTHROPIC_API_KEY.#":{
+      "env":{
+        "ANTHROPIC_API_KEY" : "#"
       }
     },
     "path.#":{

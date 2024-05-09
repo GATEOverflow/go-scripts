@@ -31,6 +31,14 @@ def getOpenAIClient(APIKEY):
     client = OpenAI(api_key=APIKEY)
     return client
 
+#get the anthropic client object
+def getAnthropicClient(APIKEY):
+    import anthropic
+    client = anthropic.Anthropic(
+        api_key=APIKEY,
+    )
+    return client
+
 #get the response form OpenAI
 def getOpenAIresponse(openAIClient, content):
     response = openAIClient.chat.completions.create(
@@ -42,6 +50,17 @@ def getOpenAIresponse(openAIClient, content):
         top_p=0.1
     )
     formattedResponse = response.choices[0].message.content
+    return formattedResponse
+
+def getAnthropicresponse(anthropicClient, content):
+    message = anthropicClient.messages.create(
+        model="claude-3-sonnet-20240229",
+        max_tokens=204,
+        messages=[
+            {"role": "user", "content": content}
+        ]
+    )
+    formattedResponse = message.content[0].text
     return formattedResponse
 
 
@@ -68,6 +87,49 @@ if(os.environ['CM_ML_MODEL_NAME'] == "go_2"):
     resultfile.to_csv('Predicted_answers.csv')
 
     # print(probs)
+elif(os.environ['CM_ML_MODEL_NAME'] == "CLAUDE_SONNET"):
+    testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
+    tagListPath = os.environ["CM_DATASET_TAGS"]
+    tagListPath=r"{}".format(tagListPath)
+    anthropicClient = getAnthropicClient(os.environ["ANTHROPIC_API_KEY"])
+    with open(tagListPath, 'r') as file:
+        # Load the JSON data
+        data = json.load(file)
+    # Obtain the value of the key
+    tagList = None
+    for key in data:
+        tagList = data[key]
+    predictedTagList = []
+    for question in tqdm(testfile['Question']):
+        fewShotPrompt = f"""
+        You are an expert topic classifier. Your role is to analyse a question and classify the question into any of the following question Tags:
+        {tagList}
+        The steps to infer the answer would be:
+        1. Analyse the question    
+        2. Infer the topic to which the question belongs.
+        3. Check if the question belongs to any of the specific area within the infered topic. eg; if the topic to which the question belongs is arrays and on further analysis, if the question can be specifically associated with subtopic such as array multipliers (which comes within the topic array), then the topic to be asssigned to the question is array multiplier.
+        4. If any specific subtopic is found , return that as answer else return the topic as the answer.
+        5. return only the answer as string , dont explain.
+
+        Here are some examples:
+
+        input: The expression large frac x y x y 2 is equal to The maximum of x and y The minimum of x and y 1 None of the above 
+        output: Absolute Value
+
+        input: The number of full and half adders required to add 16 bit numbers is 8 half adders 8 full adders 1 half adder 15 full adders 16 half adders 0 full adders 4 half adders 12 full adders  
+        output: Adder
+
+        input: Suppose a fair six sided die is rolled once If the value on the die is 1 2 or 3 the die is rolled a second time What is the probability that the sum total of values that turn up is at least 6 dfrac 10 21 dfrac 5 12 dfrac 2 3 dfrac 1 6 
+        output: Bayers Theorem
+
+        input: {question}
+        output:
+        """
+        response = getAnthropicresponse(anthropicClient, fewShotPrompt)
+        predictedTagList.append(response)
+    testfile['predictedTags'] = predictedTagList
+    testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))
+    
 elif(os.environ['CM_ML_MODEL_NAME'] == "GPT3.5"):
     testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
     tagListPath = os.environ["CM_DATASET_TAGS"]

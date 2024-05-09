@@ -24,10 +24,10 @@ def postprocess(i):
             if(soln[i] in ast.literal_eval(model_soln[i])):
                 correct = correct + 1
         print("\tAccuracy by brute force approach is:"+str(correct/len(model_soln)))
-    elif(env['CM_ML_MODEL_NAME'] == "GPT3.5"):
+    elif(env['CM_ML_MODEL_NAME'] == "GPT3.5" or env['CM_ML_MODEL_NAME'] == "CLAUDE_SONNET"):
         modelSolnData=pd.read_csv(env['CM_ML_MODEL_ANSWER'],header=0)
         accuracy = (modelSolnData['Tag'] == modelSolnData['predictedTags']).mean()
-        print(f"Accuracy through GPT3.5 is{accuracy}")
+        print(f"Accuracy through {env['CM_ML_MODEL_NAME']} is{accuracy}")
         print(f"NOTE: The solution file is present in path: {env['CM_ML_MODEL_ANSWER']}")
     else:
         soln=pd.read_csv(env['CM_DATASET_SOLUTION_PATH'],header=0)["Tag"]
