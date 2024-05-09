@@ -12,7 +12,5 @@ def preprocess(i):
 def postprocess(i):
 
     env = i['env']
-    env['CM_ML_MODEL'] = os.path.join(os.getcwd(),"qn_classification_setfitModel")
-    print("Trained model path is:"+env['CM_ML_MODEL'])
 
     return {'return':0}
