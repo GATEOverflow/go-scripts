@@ -6,6 +6,16 @@
   "default_variation": "rh",
   "deps": [
     {
+      "tags": "set,echo-off,win"
+    },
+    {
+      "names": [
+        "python",
+        "python3"
+      ],
+      "tags": "get,python3"
+    },
+    {
       "tags": "get,dataset,original,question-topic,go"
     },
     {
@@ -81,8 +91,16 @@
       "deps":[
         {
           "tags": "get,tags,preprocessed,dataset"
+        },
+        {
+          "tags": "get,generic-python-lib,_openai"
         }
       ]
+    },
+    "OPENAI_API_KEY.#":{
+      "env":{
+        "OPENAI_API_KEY" : "#"
+      }
     },
     "path.#":{
       "env": {
