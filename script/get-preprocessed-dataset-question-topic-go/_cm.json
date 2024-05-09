@@ -16,6 +16,9 @@
     },
     {
       "tags": "get,generic-python-lib,_tqdm"
+    },
+    {
+      "tags": "get,generic-python-lib,_pandas"
     }
   ],
   "env": {

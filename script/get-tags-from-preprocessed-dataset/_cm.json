@@ -1,0 +1,40 @@
+{
+  "alias": "get-tags-from-preprocessed-dataset",
+  "automation_alias": "script",
+  "automation_uid": "5b4e0237da074764",
+  "cache": true,
+  "deps": [
+    {
+      "tags": "set,echo-off,win"
+    },
+    {
+      "names": [
+        "python",
+        "python3"
+      ],
+      "tags": "get,python3"
+    },
+    {
+      "tags": "get,dataset,original,question-topic,go"
+    },
+    {
+      "tags": "get,preprocessed,dataset,go,qa,question-topic"
+    },
+    {
+      "tags": "get,generic-python-lib,_pandas"
+    }
+  ],
+  "env": {
+    "CM_DATASET": "QUESTION-TOPIC"
+  },
+  "new_env_keys": [
+    "CM_DATASET_TAGS"
+  ],
+  "tags": [
+    "get",
+    "tags",
+    "preprocessed",
+    "dataset"
+  ],
+  "uid": "d48bcfe9b6dc40e3"
+}

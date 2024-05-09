@@ -2,9 +2,19 @@
   "alias": "app-question-classification",
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
-  "cache": false,
+  "cache": true,
   "default_variation": "rh",
   "deps": [
+    {
+      "tags": "set,echo-off,win"
+    },
+    {
+      "names": [
+        "python",
+        "python3"
+      ],
+      "tags": "get,python3"
+    },
     {
       "tags": "get,dataset,original,question-topic,go"
     },
@@ -19,9 +29,6 @@
     },
     {
       "tags": "get,generic-python-lib,_numpy"
-    },
-    {
-      "tags": "get,generic-python-lib,_torch"
     },
     {
       "tags": "get,generic-python-lib,_tqdm"
@@ -43,7 +50,8 @@
     "CM_DATASET": "QUESTION-TOPIC"
   },
   "new_env_keys": [
-    "CM_DATASET_OUTPUT_MODEL*"
+    "CM_DATASET_OUTPUT_MODEL*",
+    "CM_ML_MODEL_ANSWER"
   ],
   "tags": [
     "app",
@@ -61,6 +69,9 @@
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rh"
+        },
+        {
+          "tags": "get,generic-python-lib,_torch"
         }
       ]
     },
@@ -71,8 +82,47 @@
       "deps":[
         {
           "tags": "get, ml-model, question-classification, go, qa, question-topic, _rt"
+        },
+        {
+          "tags": "get,generic-python-lib,_torch"
         }
       ]
+    },
+    "LLMGPT3.5":{
+      "env":{
+        "CM_ML_MODEL_NAME": "GPT3.5"
+      },
+      "deps":[
+        {
+          "tags": "get,tags,preprocessed,dataset"
+        },
+        {
+          "tags": "get,generic-python-lib,_openai"
+        }
+      ]
+    },
+    "LLMCLAUDE_SONNET":{
+      "env":{
+        "CM_ML_MODEL_NAME": "CLAUDE_SONNET"
+      },
+      "deps":[
+        {
+          "tags": "get,tags,preprocessed,dataset"
+        },
+        {
+          "tags": "get,generic-python-lib,_anthropic"
+        }
+      ]
+    },
+    "OPENAI_API_KEY.#":{
+      "env":{
+        "OPENAI_API_KEY" : "#"
+      }
+    },
+    "ANTHROPIC_API_KEY.#":{
+      "env":{
+        "ANTHROPIC_API_KEY" : "#"
+      }
     },
     "path.#":{
       "env": {
