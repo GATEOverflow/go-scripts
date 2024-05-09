@@ -53,7 +53,12 @@ def preprocess(i):
         
         return {'return':0}
         # print(probs)
-
+    elif(env['CM_ML_MODEL_NAME'] == "GPT3.5"):
+        testfile = get_data_file(env['CM_DATASET_SOLUTION_PATH'])
+        tagList = env["CM_DATASET_TAGS"]
+        print(testfile.head(5))
+        print(tagList)
+        return {'return':0}
     else:
         testfile = get_data_file(env['CM_PREPROCESSED_DATASET_TEST_PATH'])
         ans_list = get_trainfile_solnval(env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])

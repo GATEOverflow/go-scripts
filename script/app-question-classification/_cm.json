@@ -74,6 +74,16 @@
         }
       ]
     },
+    "LLMGPT3.5":{
+      "env":{
+        "CM_ML_MODEL_NAME": "GPT3.5"
+      },
+      "deps":[
+        {
+          "tags": "get,tags,preprocessed,dataset"
+        }
+      ]
+    },
     "path.#":{
       "env": {
         "CM_DATASET_PATH": "#"
