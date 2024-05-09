@@ -1,14 +1,5 @@
 from cmind import utils
 import os
-import pickle
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import LinearSVC
-import csv
-import numpy as np
-from setfit import SetFitModel
-from datasets import load_dataset
-import torch
 
 def preprocess(i):
 
