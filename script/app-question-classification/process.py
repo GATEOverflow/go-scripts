@@ -59,9 +59,9 @@ def getOpenAIresponse(openAIClient, content, model):
         formattedResponse = response.choices[0].text
     return formattedResponse
 
-def getAnthropicresponse(anthropicClient, content):
+def getAnthropicresponse(anthropicClient, content, model):
     message = anthropicClient.messages.create(
-        model="claude-3-sonnet-20240229",
+        model=model,
         max_tokens=204,
         messages=[
             {"role": "user", "content": content}
@@ -132,7 +132,7 @@ elif(os.environ['CM_ML_MODEL_PLATFORM'] == "CLAUDE"):
         input: {question}
         output:
         """
-        response = getAnthropicresponse(anthropicClient, fewShotPrompt)
+        response = getAnthropicresponse(anthropicClient, fewShotPrompt, model=os.environ["CM_ML_MODEL_NAME"])
         predictedTagList.append(response)
     testfile['predictedTags'] = predictedTagList
     testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))
