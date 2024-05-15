@@ -40,16 +40,23 @@ def getAnthropicClient(APIKEY):
     return client
 
 #get the response form OpenAI
-def getOpenAIresponse(openAIClient, content):
-    response = openAIClient.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-        {"role": "user", "content": content}
-        ],
-        temperature=0.2,
-        top_p=0.1
-    )
-    formattedResponse = response.choices[0].message.content
+def getOpenAIresponse(openAIClient, content, model):
+    if "davinci" not in model and "babbage" not in model:
+        response = openAIClient.chat.completions.create(
+            model=model,
+            messages=[
+            {"role": "user", "content": content}
+            ],
+            temperature=0.2,
+            top_p=0.1
+        )   
+        formattedResponse = response.choices[0].message.content
+    else:
+        response = openAIClient.completions.create(
+            model=model,
+            prompt=content
+        )   
+        formattedResponse = response.choices[0].text
     return formattedResponse
 
 def getAnthropicresponse(anthropicClient, content):
@@ -87,7 +94,7 @@ if(os.environ['CM_ML_MODEL_NAME'] == "go_2"):
     resultfile.to_csv('Predicted_answers.csv')
 
     # print(probs)
-elif(os.environ['CM_ML_MODEL_NAME'] == "CLAUDE_SONNET"):
+elif(os.environ['CM_ML_MODEL_PLATFORM'] == "CLAUDE"):
     testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
     tagListPath = os.environ["CM_DATASET_TAGS"]
     tagListPath=r"{}".format(tagListPath)
@@ -130,7 +137,7 @@ elif(os.environ['CM_ML_MODEL_NAME'] == "CLAUDE_SONNET"):
     testfile['predictedTags'] = predictedTagList
     testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))
     
-elif(os.environ['CM_ML_MODEL_NAME'] == "GPT3.5"):
+elif(os.environ['CM_ML_MODEL_PLATFORM'] == "OPENAI"):
     testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
     tagListPath = os.environ["CM_DATASET_TAGS"]
     tagListPath=r"{}".format(tagListPath)
@@ -168,7 +175,7 @@ elif(os.environ['CM_ML_MODEL_NAME'] == "GPT3.5"):
         input: {question}
         output:
         """
-        response = getOpenAIresponse(openAIClient, fewShotPrompt)
+        response = getOpenAIresponse(openAIClient, fewShotPrompt, model=os.environ["CM_ML_MODEL_NAME"])
         predictedTagList.append(response)
     testfile['predictedTags'] = predictedTagList
     testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))

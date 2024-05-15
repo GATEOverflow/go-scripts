@@ -88,9 +88,9 @@
         }
       ]
     },
-    "LLMGPT3.5":{
+    "OPENAI":{
       "env":{
-        "CM_ML_MODEL_NAME": "GPT3.5"
+        "CM_ML_MODEL_PLATFORM": "OPENAI"
       },
       "deps":[
         {
@@ -101,9 +101,9 @@
         }
       ]
     },
-    "LLMCLAUDE_SONNET":{
+    "CLAUDE":{
       "env":{
-        "CM_ML_MODEL_NAME": "CLAUDE_SONNET"
+        "CM_ML_MODEL_PLATFORM": "CLAUDE"
       },
       "deps":[
         {
@@ -113,6 +113,16 @@
           "tags": "get,generic-python-lib,_package.anthropic"
         }
       ]
+    },
+    "OPENAI_MODEL.#":{
+      "env":{
+        "CM_ML_MODEL_NAME": "#"
+      }
+    },
+    "CLAUDE_MODEL.#":{
+      "env":{
+        "CM_ML_MODEL_NAME": "#"
+      }
     },
     "OPENAI_API_KEY.#":{
       "env":{

@@ -24,7 +24,7 @@ def postprocess(i):
             if(soln[i] in ast.literal_eval(model_soln[i])):
                 correct = correct + 1
         print("\tAccuracy by brute force approach is:"+str(correct/len(model_soln)))
-    elif(env['CM_ML_MODEL_NAME'] == "GPT3.5" or env['CM_ML_MODEL_NAME'] == "CLAUDE_SONNET"):
+    elif(env['CM_ML_MODEL_PLATFORM'] == "OPENAI" or env['CM_ML_MODEL_PLATFORM'] == "CLAUDE"):
         modelSolnData=pd.read_csv(env['CM_ML_MODEL_ANSWER'],header=0)
         accuracy = (modelSolnData['Tag'] == modelSolnData['predictedTags']).mean()
         print(f"Accuracy through {env['CM_ML_MODEL_NAME']} is{accuracy}")
