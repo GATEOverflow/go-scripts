@@ -2,7 +2,7 @@
   "alias": "app-question-classification",
   "automation_alias": "script",
   "automation_uid": "5b4e0237da074764",
-  "cache": true,
+  "cache": false,
   "default_variation": "rh",
   "deps": [
     {
@@ -88,31 +88,41 @@
         }
       ]
     },
-    "LLMGPT3.5":{
+    "OPENAI":{
       "env":{
-        "CM_ML_MODEL_NAME": "GPT3.5"
+        "CM_ML_MODEL_PLATFORM": "OPENAI"
       },
       "deps":[
         {
           "tags": "get,tags,preprocessed,dataset"
         },
         {
-          "tags": "get,generic-python-lib,_openai"
+          "tags": "get,generic-python-lib,_package.openai"
         }
       ]
     },
-    "LLMCLAUDE_SONNET":{
+    "CLAUDE":{
       "env":{
-        "CM_ML_MODEL_NAME": "CLAUDE_SONNET"
+        "CM_ML_MODEL_PLATFORM": "CLAUDE"
       },
       "deps":[
         {
           "tags": "get,tags,preprocessed,dataset"
         },
         {
-          "tags": "get,generic-python-lib,_anthropic"
+          "tags": "get,generic-python-lib,_package.anthropic"
         }
       ]
+    },
+    "OPENAI_MODEL.#":{
+      "env":{
+        "CM_ML_MODEL_NAME": "#"
+      }
+    },
+    "CLAUDE_MODEL.#":{
+      "env":{
+        "CM_ML_MODEL_NAME": "#"
+      }
     },
     "OPENAI_API_KEY.#":{
       "env":{
