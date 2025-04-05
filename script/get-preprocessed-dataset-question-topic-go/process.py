@@ -59,7 +59,7 @@ def preprocess_text(text_data):
 
 
 #preprocessing the training file
-trainfile = get_data_file(os.environ['CM_DATASET_TRAIN_PATH'])
+trainfile = get_data_file(os.environ['MLC_DATASET_TRAIN_PATH'])
 trainfile = rename_column(trainfile, ' Tag', 'Tag')
 print(trainfile['Tag'].value_counts(ascending=True))  
 trainfile['Question'] = preprocess_text(trainfile['Question'])
@@ -67,12 +67,12 @@ savefile(trainfile, "train")
 print("File saved\n\n")
     
 #for preprocessing the test file
-testfile = get_data_file(os.environ['CM_DATASET_TEST_PATH'])
+testfile = get_data_file(os.environ['MLC_DATASET_TEST_PATH'])
 testfile['Question'] = preprocess_text(testfile['Question'])  
 savefile(testfile, "test")
 print("File saved\n\n")
 #preprocessing the solution file
-solnfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])  
+solnfile = get_data_file(os.environ['MLC_DATASET_SOLUTION_PATH'])  
 solnfile = rename_column(solnfile, ' Tag', 'Tag')
 savefile(solnfile, "soln")
 print("File saved\n\n")

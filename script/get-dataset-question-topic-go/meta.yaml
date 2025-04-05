@@ -6,9 +6,9 @@ default_variation: full
 deps:
 - tags: set,echo-off,win
 env:
-  CM_DATASET: QUESTION-TOPIC
+  MLC_DATASET: QUESTION-TOPIC
 new_env_keys:
-- CM_DATASET_*
+- MLC_DATASET_*
 tags:
 - get
 - dataset
@@ -21,19 +21,19 @@ uid: e6d281efd6864fc6
 variations:
   cse-1:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1'
   cse-500:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '500'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '500'
   cse-full:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_FULL: 'yes'
-      CM_DATASET_SIZE: '1000'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_FULL: 'yes'
+      MLC_DATASET_SIZE: '1000'
   full:
     env:
-      CM_DATASET_FULL: 'yes'
-      CM_DATASET_SIZE: '1000'
-      CM_DATASET_VER: '2022'
+      MLC_DATASET_FULL: 'yes'
+      MLC_DATASET_SIZE: '1000'
+      MLC_DATASET_VER: '2022'

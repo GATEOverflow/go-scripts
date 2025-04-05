@@ -9,12 +9,16 @@ deps:
   - python3
   tags: get,python3
 - tags: get,dataset,original,question-topic,go
+- tags: get,generic-python-lib,_pandas
+- tags: get,generic-python-lib,_scikit-learn
+  names:
+  - scikit-learn
 - tags: get,preprocessed,dataset,go,qa,question-topic
 env:
-  CM_DATASET: QUESTION-TOPIC
+  MLC_DATASET: QUESTION-TOPIC
 new_env_keys:
-- CM_DATASET_TRAINED_MODEL*
-- CM_ML_MODEL*
+- MLC_DATASET_TRAINED_MODEL*
+- MLC_ML_MODEL*
 tags:
 - go
 - qa
@@ -25,19 +29,19 @@ uid: 25a2468433a24e3f
 variations:
   cse-1:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1'
   cse-500:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '500'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '500'
   cse-full:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1000'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1000'
+      MLC_IMAGENET_FULL: 'yes'
   full:
     env:
-      CM_DATASET_SIZE: '1000'
-      CM_DATASET_VER: '2022'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_SIZE: '1000'
+      MLC_DATASET_VER: '2022'
+      MLC_IMAGENET_FULL: 'yes'

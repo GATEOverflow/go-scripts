@@ -6,8 +6,12 @@ default_variation: full
 deps:
 - tags: set,echo-off,win
 - tags: get,sys-utils-cm
+- tags: get,generic-python-lib,_pandas
+- tags: get,generic-python-lib,_scikit-learn
+  names:
+  - scikit-learn
 env:
-  CM_DATASET: QUESTION-TOPIC
+  MLC_DATASET: QUESTION-TOPIC
 new_env_keys: []
 tags:
 - postprocess
@@ -19,19 +23,19 @@ uid: 6cecd6d2d34246e0
 variations:
   cse-1:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1'
   cse-500:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '500'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '500'
   cse-full:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1000'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1000'
+      MLC_IMAGENET_FULL: 'yes'
   full:
     env:
-      CM_DATASET_SIZE: '1000'
-      CM_DATASET_VER: '2022'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_SIZE: '1000'
+      MLC_DATASET_VER: '2022'
+      MLC_IMAGENET_FULL: 'yes'

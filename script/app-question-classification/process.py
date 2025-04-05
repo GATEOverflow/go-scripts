@@ -71,11 +71,11 @@ def getAnthropicresponse(anthropicClient, content, model):
     return formattedResponse
 
 
-if(os.environ['CM_ML_MODEL_NAME'] == "go_2"):
+if(os.environ['MLC_ML_MODEL_NAME'] == "go_2"):
     from setfit import SetFitModel
     import torch
     dataset = load_dataset("ANANDHU-SCT/TOPIC_CLASSIFICATION")
-    model = SetFitModel.from_pretrained(os.environ['CM_ML_MODEL'])
+    model = SetFitModel.from_pretrained(os.environ['MLC_ML_MODEL'])
     probs = model.predict_proba(dataset['test']['Question'])
     final_result = []
     resultfile = pd.DataFrame()
@@ -94,9 +94,9 @@ if(os.environ['CM_ML_MODEL_NAME'] == "go_2"):
     resultfile.to_csv('Predicted_answers.csv')
 
     # print(probs)
-elif(os.environ['CM_ML_MODEL_PLATFORM'] == "CLAUDE"):
-    testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
-    tagListPath = os.environ["CM_DATASET_TAGS"]
+elif(os.environ['MLC_ML_MODEL_PLATFORM'] == "CLAUDE"):
+    testfile = get_data_file(os.environ['MLC_DATASET_SOLUTION_PATH'])
+    tagListPath = os.environ["MLC_DATASET_TAGS"]
     tagListPath=r"{}".format(tagListPath)
     anthropicClient = getAnthropicClient(os.environ["ANTHROPIC_API_KEY"])
     with open(tagListPath, 'r') as file:
@@ -132,14 +132,14 @@ elif(os.environ['CM_ML_MODEL_PLATFORM'] == "CLAUDE"):
         input: {question}
         output:
         """
-        response = getAnthropicresponse(anthropicClient, fewShotPrompt, model=os.environ["CM_ML_MODEL_NAME"])
+        response = getAnthropicresponse(anthropicClient, fewShotPrompt, model=os.environ["MLC_ML_MODEL_NAME"])
         predictedTagList.append(response)
     testfile['predictedTags'] = predictedTagList
     testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))
     
-elif(os.environ['CM_ML_MODEL_PLATFORM'] == "OPENAI"):
-    testfile = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])
-    tagListPath = os.environ["CM_DATASET_TAGS"]
+elif(os.environ['MLC_ML_MODEL_PLATFORM'] == "OPENAI"):
+    testfile = get_data_file(os.environ['MLC_DATASET_SOLUTION_PATH'])
+    tagListPath = os.environ["MLC_DATASET_TAGS"]
     tagListPath=r"{}".format(tagListPath)
     openAIClient = getOpenAIClient(os.environ["OPENAI_API_KEY"])
     with open(tagListPath, 'r') as file:
@@ -175,16 +175,16 @@ elif(os.environ['CM_ML_MODEL_PLATFORM'] == "OPENAI"):
         input: {question}
         output:
         """
-        response = getOpenAIresponse(openAIClient, fewShotPrompt, model=os.environ["CM_ML_MODEL_NAME"])
+        response = getOpenAIresponse(openAIClient, fewShotPrompt, model=os.environ["MLC_ML_MODEL_NAME"])
         predictedTagList.append(response)
     testfile['predictedTags'] = predictedTagList
     testfile.to_csv(os.path.join(os.getcwd(),'Predicted_answers.csv'))
 else:
-    testfile = get_data_file(os.environ['CM_PREPROCESSED_DATASET_TEST_PATH'])
-    ans_list = get_trainfile_solnval(os.environ['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
-    soln_file = get_data_file(os.environ['CM_DATASET_SOLUTION_PATH'])["Tag"]
-    loaded_model = pickle.load(open(os.environ['CM_ML_MODEL'], 'rb'))
-    tfidfvect = pickle.load(open(os.environ['CM_DATASET_TRAINED_MODEL_TFIDQ'], 'rb'))
+    testfile = get_data_file(os.environ['MLC_PREPROCESSED_DATASET_TEST_PATH'])
+    ans_list = get_trainfile_solnval(os.environ['MLC_PREPROCESSED_DATASET_TRAIN_PATH'])
+    soln_file = get_data_file(os.environ['MLC_DATASET_SOLUTION_PATH'])["Tag"]
+    loaded_model = pickle.load(open(os.environ['MLC_ML_MODEL'], 'rb'))
+    tfidfvect = pickle.load(open(os.environ['MLC_DATASET_TRAINED_MODEL_TFIDQ'], 'rb'))
     p=loaded_model.predict(tfidfvect.transform(testfile['Question']))
     prob=loaded_model.predict_proba(tfidfvect.transform(testfile['Question']))
     main_list=[]

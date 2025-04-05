@@ -19,10 +19,10 @@ deps:
   - scikit-learn
   tags: get,generic-python-lib,_scikit-learn
 env:
-  CM_DATASET: QUESTION-TOPIC
+  MLC_DATASET: QUESTION-TOPIC
 new_env_keys:
-- CM_DATASET_OUTPUT_MODEL*
-- CM_ML_MODEL_ANSWER
+- MLC_DATASET_OUTPUT_MODEL*
+- MLC_ML_MODEL_ANSWER
 post_deps:
 - tags: postprocess,question-classification
 tags:
@@ -41,41 +41,41 @@ variations:
     - tags: get,tags,preprocessed,dataset
     - tags: get,generic-python-lib,_package.anthropic
     env:
-      CM_ML_MODEL_PLATFORM: CLAUDE
+      MLC_ML_MODEL_PLATFORM: CLAUDE
   CLAUDE_MODEL.#:
     env:
-      CM_ML_MODEL_NAME: '#'
+      MLC_ML_MODEL_NAME: '#'
   OPENAI:
     deps:
     - tags: get,tags,preprocessed,dataset
     - tags: get,generic-python-lib,_package.openai
     env:
-      CM_ML_MODEL_PLATFORM: OPENAI
+      MLC_ML_MODEL_PLATFORM: OPENAI
   OPENAI_API_KEY.#:
     env:
       OPENAI_API_KEY: '#'
   OPENAI_MODEL.#:
     env:
-      CM_ML_MODEL_NAME: '#'
+      MLC_ML_MODEL_NAME: '#'
   path.#:
     deps:
     - tags: get, ml-model, question-classification, go, qa, question-topic, _rh
     env:
-      CM_DATASET_PATH: '#'
+      MLC_DATASET_PATH: '#'
   rh:
     deps:
     - tags: get, ml-model, question-classification, go, qa, question-topic, _rh
     - tags: get,generic-python-lib,_torch
     env:
-      CM_ML_MODEL_NAME: go_1
+      MLC_ML_MODEL_NAME: go_1
   rt:
     deps:
     - tags: get, ml-model, question-classification, go, qa, question-topic, _rt
     - tags: get,generic-python-lib,_torch
     env:
-      CM_ML_MODEL_NAME: go_2
+      MLC_ML_MODEL_NAME: go_2
   setfit_dataset_path.#:
     deps:
     - tags: get, ml-model, question-classification, go, qa, question-topic, _rt
     env:
-      CM_SETFIT_DATASET: '#'
+      MLC_SETFIT_DATASET: '#'

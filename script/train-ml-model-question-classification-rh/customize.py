@@ -1,4 +1,3 @@
-from cmind import utils
 import os
 import pandas as pd
 from sklearn.svm import LinearSVC
@@ -31,7 +30,7 @@ def preprocess(i):
     os_info = i['os_info']
 
     env = i['env']
-    trainfile = get_data_file(env['CM_PREPROCESSED_DATASET_TRAIN_PATH'])
+    trainfile = get_data_file(env['MLC_PREPROCESSED_DATASET_TRAIN_PATH'])
     model, tfidf_vect = create_model_rohan(trainfile['Question'], trainfile['Tag'])
     pickle.dump(tfidf_vect, open("tfidf_obj", 'wb'))
     pickle.dump(model, open("model_rh.sav", 'wb'))
@@ -42,8 +41,8 @@ def preprocess(i):
 
 def postprocess(i):
     env = i['env']
-    env['CM_ML_MODEL'] = os.path.join(os.getcwd(),"model_rh.sav")
-    env['CM_DATASET_TRAINED_MODEL_TFIDQ'] = os.path.join(os.getcwd(),"tfidf_obj")
-    print("Trained model path is:"+env['CM_ML_MODEL'])
+    env['MLC_ML_MODEL'] = os.path.join(os.getcwd(),"model_rh.sav")
+    env['MLC_DATASET_TRAINED_MODEL_TFIDQ'] = os.path.join(os.getcwd(),"tfidf_obj")
+    print("Trained model path is:"+env['MLC_ML_MODEL'])
 
     return {'return':0}

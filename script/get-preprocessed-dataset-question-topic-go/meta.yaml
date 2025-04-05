@@ -10,9 +10,9 @@ deps:
 - tags: get,generic-python-lib,_tqdm
 - tags: get,generic-python-lib,_pandas
 env:
-  CM_PREPROCESSED_DATASET: QUESTION-TOPIC
+  MLC_PREPROCESSED_DATASET: QUESTION-TOPIC
 new_env_keys:
-- CM_PREPROCESSED_DATASET_*
+- MLC_PREPROCESSED_DATASET_*
 tags:
 - get
 - preprocessed
@@ -24,19 +24,19 @@ uid: b934597a9b3b4e51
 variations:
   cse-1:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1'
   cse-500:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '500'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '500'
   cse-full:
     env:
-      CM_DATASET_DEPARTMENT: cse
-      CM_DATASET_SIZE: '1000'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_DEPARTMENT: cse
+      MLC_DATASET_SIZE: '1000'
+      MLC_IMAGENET_FULL: 'yes'
   full:
     env:
-      CM_DATASET_SIZE: '1000'
-      CM_DATASET_VER: '2022'
-      CM_IMAGENET_FULL: 'yes'
+      MLC_DATASET_SIZE: '1000'
+      MLC_DATASET_VER: '2022'
+      MLC_IMAGENET_FULL: 'yes'

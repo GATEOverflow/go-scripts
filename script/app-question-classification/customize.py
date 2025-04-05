@@ -1,4 +1,3 @@
-from cmind import utils
 import os
 
 def preprocess(i):
@@ -12,5 +11,5 @@ def preprocess(i):
 
 def postprocess(i):
     env = i['env']
-    # env['CM_ML_MODEL_ANSWER'] = os.path.join(os.getcwd(),"Predicted_answers.csv")
+    # env['MLC_ML_MODEL_ANSWER'] = os.path.join(os.getcwd(),"Predicted_answers.csv")
     return {'return':0}

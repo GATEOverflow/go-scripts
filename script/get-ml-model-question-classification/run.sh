@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r $CM_ML_MODEL .
+cp -r $MLC_ML_MODEL .

@@ -12,9 +12,9 @@ deps:
 - tags: get,preprocessed,dataset,go,qa,question-topic
 - tags: get,generic-python-lib,_pandas
 env:
-  CM_DATASET: QUESTION-TOPIC
+  MLC_DATASET: QUESTION-TOPIC
 new_env_keys:
-- CM_DATASET_TAGS
+- MLC_DATASET_TAGS
 tags:
 - get
 - tags
