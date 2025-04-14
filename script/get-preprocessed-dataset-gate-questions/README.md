@@ -33,8 +33,8 @@ mlc pull repo gateoverflow@go-scripts
   ]
 }
 ```
-```
-```
+
+Check [here](../get-dataset-gate-questions/meta.yaml) for more details. 
 
 ### WIP
 ```
