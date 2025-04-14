@@ -9,6 +9,8 @@ deps:
     - python
     - python3
   - tags: get,dataset,original,gate-questions
+    names:
+    - original-dataset
     skip_if_env:
       MLC_GATE_QUESTIONS_JSON_FILE_PATH:
       - on
@@ -30,4 +32,7 @@ tests:
   run_inputs: []
 uid: dc151a04701c40e5
 variations:
-  gatecse-2025: {}
+  gatecse-2025:
+    adr:
+      original-dataset:
+        tags: _gatecse-2025
