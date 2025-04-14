@@ -16,7 +16,7 @@ deps:
 input_mapping:
   questions_json_path: MLC_GATE_QUESTIONS_JSON_FILE_PATH
 new_env_keys:
-- MLC_GATE_QUESTIONS_JSON_FILE_PATH
+- MLC_PREPROCESSED_GATE_QUESTIONS_JSON_FILE_PATH
 new_state_keys: []
 post_deps: []
 posthook_deps: []
