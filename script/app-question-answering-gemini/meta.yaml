@@ -1,0 +1,44 @@
+alias: app-question-answering-gemini
+automation_alias: script
+automation_uid: 5b4e0237da074764
+category: MLC Script Template
+deps: []
+new_env_keys: []
+new_state_keys: []
+post_deps: []
+posthook_deps: []
+prehook_deps: []
+input_mapping:
+  api_key: MLC_GEMINI_API_KEY
+  model: MLC_GEMINI_MODEL
+tags:
+- question
+- gemini
+- answering
+tests:
+  run_inputs: []
+uid: 57dc48923c974707
+variations:
+  gate:
+    group: question-source
+    default_variations:
+      question-subject: cse
+      year: year.2025
+    env:
+      MLC_QA_SOURCE: gate
+  cse:
+    group: question-subject
+    env:
+      MLC_QA_SUBJECT: cse
+  year.2025:
+    group: year
+    env:
+      MLC_QA_SOURCE_YEAR: 2025
+  year.#:
+    group: year
+    env:
+      MLC_QA_SOURCE_YEAR: '#'
+  gate,cse,year.2025:
+    deps:
+      - tags: get,dataset,original,gate-questions,_gatecse-2025
+
