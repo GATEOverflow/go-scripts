@@ -64,7 +64,7 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_filename = f"llama_results_{timestamp}.csv"
+    csv_filename = f"gemini_results_{timestamp}.csv"
     csv_path = os.path.join(script_dir, csv_filename)
 
 
