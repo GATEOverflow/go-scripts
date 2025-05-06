@@ -3,6 +3,7 @@ import os
 import json
 import csv
 import time
+from datetime import datetime
 def preprocess(i):
     env = i['env']
     automation = i['automation']
@@ -27,7 +28,7 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
 
     outs = []
     state = {}
-    count = 0
+    count = 1
     for question in questions:
         question_content = question['content'].replace('"', '\\"')
         user_prompt = f"""Question Text: {question_content}, Question Type: {question['question_type']}"""
@@ -57,12 +58,15 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
         count += 1
         if count%15==0:
             print("Pause of 1 minute due to rate limiting")
-            time.sleep(60)
+            time.sleep(60)    
 
     i['state']['output'] = outs
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    csv_path = os.path.join(script_dir, env.get('MLC_OUTPUT_CSV_PATH', 'gemini_results.csv'))
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    csv_filename = f"llama_results_{timestamp}.csv"
+    csv_path = os.path.join(script_dir, csv_filename)
+
 
     with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=['Question Title', 'Question Type', 'Actual Key', 'Predicted'])
@@ -74,7 +78,8 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
 
 def postprocess(i):
     state = i['state']
-
+    env = i['env']
+    gemini_model = env.get('MLC_GEMINI_MODEL', 'gemini-2.0-flash')
     output = state['output']
     correct = 0
     wrong = 0
@@ -100,6 +105,6 @@ def postprocess(i):
 
     print(f""" Correct: {correct}, Wrong: {wrong}, Total: {len(output)}""")
     accuracy = correct/(correct+wrong)
-    print(f"""The accuracy of Gemini-2.0-flash is, {accuracy}""")
+    print(f"""The accuracy of {gemini_model} is, {accuracy}""")
     
     return {'return': 0}
