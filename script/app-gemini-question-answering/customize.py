@@ -23,6 +23,10 @@ def ask_gemini(question, options_dict, model):
     # For any question if you are not sure about the answer or did not understand the question or if you feel the question is incomplete or wrong, you can skip the question by leaving the question and move on.
     response = model.generate_content(prompt)
     answer = response.text.strip().upper()
+    
+    if ";" not in answer and len(answer) > 1:  # Likely an MSQ answer without semicolons
+        answer = ";".join(answer)  # Add semicolons between letters
+    
     return answer
 
 def preprocess(i):
