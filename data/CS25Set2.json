@@ -1,0 +1,818 @@
+[
+  {
+    "question_number": 1,
+    "question": "Despite his initial hesitation, Rehman’s _________ to contribute to the success of\nthe project never wavered.\nSelect the most appropriate option to complete the above sentence.",
+    "options": {
+      "A": "ambivalence",
+      "B": "satisfaction",
+      "C": "resolve",
+      "D": "revolve\nOrganising Institute: IIT Roorkee Page 1 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "C"
+  },
+  {
+    "question_number": 2,
+    "question": "Bird : Nest :: Bee : _______\nSelect the correct option to complete the analogy.",
+    "options": {
+      "A": "Kennel",
+      "B": "Hammock",
+      "C": "Hive",
+      "D": "Lair\nOrganising Institute: IIT Roorkee Page 2 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "C"
+  },
+  {
+    "question_number": 3,
+    "question": "If 𝑃𝑒𝑥 = 𝑄𝑒−𝑥 for all real values of 𝑥, which one of the following statements is\ntrue?",
+    "options": {
+      "A": "𝑃 = 𝑄 = 0",
+      "B": "𝑃 = 𝑄 = 1",
+      "C": "𝑃 = 1; 𝑄 = −1",
+      "D": "𝑃\n= 0\n𝑄\nOrganising Institute: IIT Roorkee Page 3 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 4,
+    "question": "The paper as shown in the figure is folded to make a cube where each square\ncorresponds to a particular face of the cube. Which one of the following options\ncorrectly represents the cube?\nNote: The figures shown are representative.",
+    "options": {
+      "A": "(B)",
+      "C": "(D)\nOrganising Institute: IIT Roorkee Page 4 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 5,
+    "question": "Let 𝑝 and 𝑝 denote two arbitrary prime numbers. Which one of the following\n1 2\nstatements is correct for all values of 𝑝 and 𝑝 ?\n1 2",
+    "options": {
+      "A": "𝑝 +𝑝 is not a prime number.\n1 2",
+      "B": "𝑝 𝑝 is not a prime number.\n1 2",
+      "C": "𝑝 +𝑝 +1 is a prime number.\n1 2",
+      "D": "𝑝 𝑝 +1 is a prime number.\n1 2\nOrganising Institute: IIT Roorkee Page 5 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "B"
+  },
+  {
+    "question_number": 6,
+    "question": "Based only on the conversation below, identify the logically correct inference:\n“Even if I had known that you were in the hospital, I would not have gone there to\nsee you”, Ramya told Josephine.",
+    "options": {
+      "A": "Ramya knew that Josephine was in the hospital.",
+      "B": "Ramya did not know that Josephine was in the hospital.",
+      "C": "Ramya and Josephine were once close friends; but now, they are not.",
+      "D": "Josephine was in the hospital due to an injury to her leg.\nOrganising Institute: IIT Roorkee Page 6 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "B"
+  },
+  {
+    "question_number": 7,
+    "question": "If IMAGE and FIELD are coded as FHBNJ and EMFJG respectively then, which\none among the given options is the most appropriate code for BEACH ?",
+    "options": {
+      "A": "CEADP",
+      "B": "IDBFC",
+      "C": "JGIBC",
+      "D": "IBCEC\nOrganising Institute: IIT Roorkee Page 7 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "B"
+  },
+  {
+    "question_number": 8,
+    "question": "Which one of the following options is correct for the given data in the table?\nIteration (i) 0 1 2 3\nInput (I) 20 −4 10 15\nOutput (X) 20 16 26 41\nOutput (Y) 20 −80 −800 −12000",
+    "options": {
+      "A": "𝑋(𝑖) = 𝑋(𝑖 −1)+𝐼(𝑖); 𝑌(𝑖) = 𝑌(𝑖 −1)𝐼(𝑖); 𝑖 > 0",
+      "B": "𝑋(𝑖) = 𝑋(𝑖 −1)𝐼(𝑖); 𝑌(𝑖) = 𝑌(𝑖 −1)+𝐼(𝑖); 𝑖 > 0",
+      "C": "𝑋(𝑖) = 𝑋(𝑖 −1)𝐼(𝑖); 𝑌(𝑖) = 𝑌(𝑖 −1)𝐼(𝑖); 𝑖 > 0",
+      "D": "𝑋(𝑖) = 𝑋(𝑖 −1)+𝐼(𝑖); 𝑌(𝑖) = 𝑌(𝑖 −1)𝐼(𝑖−1); 𝑖 > 0\nOrganising Institute: IIT Roorkee Page 8 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "A"
+  },
+  {
+    "question_number": 9,
+    "question": "In the given figure, PQRS is a square of side 2 cm and PLMN is a rectangle. The\ncorner L of the rectangle is on the side QR. Side MN of the rectangle passes through\nthe corner S of the square.\nWhat is the area (in cm2) of the rectangle PLMN?\nNote: The figure shown is representative.\nN\nP S\nM\nQ R\nL",
+    "options": {
+      "A": "2√2",
+      "B": "2",
+      "C": "8",
+      "D": "4\nOrganising Institute: IIT Roorkee Page 9 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "D"
+  },
+  {
+    "question_number": 10,
+    "question": "The diagram below shows a river system consisting of 7 segments, marked P, Q, R,\nS, T, U, and V. It splits the land into 5 zones, marked Z1, Z2, Z3, Z4, and Z5. We\nneed to connect these zones using the least number of bridges. Out of the following\noptions, which one is correct?\nNote: The figure shown is representative.\nZ3\nZ2\nR\nV\nT\nP\nQ Z4\nZ1 U\nS Z5",
+    "options": {
+      "A": "Bridges on P, Q, and T",
+      "B": "Bridges on P, Q, S, and T",
+      "C": "Bridges on Q, R, T, and V",
+      "D": "Bridges on P, Q, S, U, and V\nOrganising Institute: IIT Roorkee Page 10 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "C"
+  },
+  {
+    "question_number": 11,
+    "question": "1 2\nIf 𝐴 = ( ), then which ONE of the following is 𝐴8 ?\n2 −1",
+    "options": {
+      "A": "25 0",
+      "B": "125 0",
+      "C": "625 0",
+      "D": "3125 0"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "C"
+  },
+  {
+    "question_number": 12,
+    "question": "The value of 𝑥 such that 𝑥 > 1, satisfying the equation ∫ 𝑥 𝑡 ln 𝑡 𝑑𝑡 = 1 is\n1 4",
+    "options": {
+      "A": "√𝑒",
+      "B": "𝑒",
+      "C": "𝑒2",
+      "D": "𝑒−1\nOrganising Institute: IIT Roorkee Page 11 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 13,
+    "question": "Consider a binary tree 𝑇 in which every node has either zero or two children.\nLet 𝑛 > 0 be the number of nodes in 𝑇.\nWhich ONE of the following is the number of nodes in 𝑇 that have exactly two\nchildren?",
+    "options": {
+      "A": "𝑛−2\n2",
+      "B": "𝑛−1\n2\n𝑛",
+      "C": "2",
+      "D": "𝑛+1\n2\nOrganising Institute: IIT Roorkee Page 12 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "B"
+  },
+  {
+    "question_number": 14,
+    "question": "Let 𝐿,𝑀, and 𝑁 be non-singular matrices of order 3 satisfying the equations\n𝐿2 = 𝐿−1 , 𝑀 = 𝐿8 and 𝑁 = 𝐿2.\nWhich ONE of the following is the value of the determinant of (𝑀−𝑁)?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 15,
+    "question": "Let 𝑃(𝑥) be an arbitrary predicate over the domain of natural numbers.\nWhich ONE of the following statements is TRUE?",
+    "options": {
+      "A": "(𝑃(0)∧(∀𝑥 [𝑃(𝑥) ⇒ 𝑃(𝑥+1)])) ⇒ (∀𝑥 𝑃(𝑥))",
+      "B": "(𝑃(0)∧(∀𝑥 [𝑃(𝑥) ⇒ 𝑃(𝑥−1)])) ⇒ (∀𝑥 𝑃(𝑥))",
+      "C": "(𝑃(1000)∧(∀𝑥 [𝑃(𝑥) ⇒ 𝑃(𝑥−1)])) ⇒ (∀𝑥 𝑃(𝑥))",
+      "D": "(𝑃(1000)∧(∀𝑥 [𝑃(𝑥) ⇒ 𝑃(𝑥+1)])) ⇒ (∀𝑥 𝑃(𝑥))\nOrganising Institute: IIT Roorkee Page 13 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 16,
+    "question": "Consider the following statements:\n(i) Address Resolution Protocol (ARP) provides a mapping from an IP\naddress to the corresponding hardware (link-layer) address.\n(ii) A single TCP segment from a sender S to a receiver R cannot carry both\ndata from S to R and acknowledgement for a segment from R to S.\nWhich ONE of the following is CORRECT?",
+    "options": {
+      "A": "Both (i) and (ii) are TRUE",
+      "B": "(i) is TRUE and (ii) is FALSE",
+      "C": "(i) is FALSE and (ii) is TRUE",
+      "D": "Both (i) and (ii) are FALSE\nOrganising Institute: IIT Roorkee Page 14 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "B"
+  },
+  {
+    "question_number": 17,
+    "question": "Consider the routing protocols given in List I and the names given in List II:\nList I List II\n(i) Distance vector routing (a) Bellman-Ford\n(ii) Link state routing (b) Dijkstra\nFor matching of items in List I with those in List II, which ONE of the following\noptions is CORRECT?",
+    "options": {
+      "A": "(i) – (a) and (ii) – (b)",
+      "B": "(i) – (a) and (ii) – (a)",
+      "C": "(i) – (b) and (ii) – (a)",
+      "D": "(i) – (b) and (ii) – (b)\nOrganising Institute: IIT Roorkee Page 15 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 18,
+    "question": "A machine receives an IPv4 datagram. The protocol field of the IPv4 header has the\nprotocol number of a protocol X.\nWhich ONE of the following is NOT a possible candidate for X?",
+    "options": {
+      "A": "Internet Control Message Protocol (ICMP)",
+      "B": "Internet Group Management Protocol (IGMP)",
+      "C": "Open Shortest Path First (OSPF)",
+      "D": "Routing Information Protocol (RIP)\nOrganising Institute: IIT Roorkee Page 16 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 19,
+    "question": "Consider the following C program:\n#include <stdio.h>\nvoid stringcopy(char *, char *);\nint main(){\nchar a[30] = \"@#Hello World!\";\nstringcopy(a, a + 2);\nprintf(\"%s\\n\", a);\nreturn 0;\n}\nvoid stringcopy(char *s, char *t) {\nwhile(*t)\n*s++ = *t++;\n}\nWhich ONE of the following will be the output of the program?",
+    "options": {
+      "A": "@#Hello World!",
+      "B": "Hello World!",
+      "C": "ello World!",
+      "D": "Hello World!d!\nOrganising Institute: IIT Roorkee Page 17 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 20,
+    "question": "Consider an unordered list of 𝑁 distinct integers.\nWhat is the minimum number of element comparisons required to find an integer\nin the list that is NOT the largest in the list?",
+    "options": {
+      "A": "1",
+      "B": "𝑁−1",
+      "C": "𝑁",
+      "D": "2𝑁−1"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 21,
+    "question": "Consider the following statements about the use of backpatching in a compiler for\nintermediate code generation:\n(I) Backpatching can be used to generate code for Boolean expression in\none pass.\n(II) Backpatching can be used to generate code for flow-of-control\nstatements in one pass.\nWhich ONE of the following options is CORRECT?",
+    "options": {
+      "A": "Only (I) is correct.",
+      "B": "Only (II) is correct.",
+      "C": "Both (I) and (II) are correct.",
+      "D": "Neither (I) nor (II) is correct.\nOrganising Institute: IIT Roorkee Page 18 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "C"
+  },
+  {
+    "question_number": 22,
+    "question": "Given the following syntax directed translation rules:\nRule 1: 𝑅 → 𝐴𝐵 {𝐵.𝑖 = 𝑅.𝑖 −1;𝐴.𝑖 = 𝐵.𝑖;𝑅.𝑖 = 𝐴.𝑖 +1;}\nRule 2: 𝑃 → 𝐶𝐷 {𝑃.𝑖 = 𝐶.𝑖 +𝐷.𝑖;𝐷.𝑖 = 𝐶.𝑖 +2;}\nRule 3: 𝑄 → 𝐸𝐹 {𝑄.𝑖 = 𝐸.𝑖 +𝐹.𝑖;}\nWhich ONE is the CORRECT option among the following?",
+    "options": {
+      "A": "Rule 1 is S-attributed and L-attributed; Rule 2 is S-attributed and not L-attributed;\nRule 3 is neither S-attributed nor L-attributed",
+      "B": "Rule 1 is neither S-attributed nor L-attributed; Rule 2 is S-attributed and L-\nattributed; Rule 3 is S-attributed and L-attributed",
+      "C": "Rule 1 is neither S-attributed nor L-attributed; Rule 2 is not S-attributed and\nis L-attributed; Rule 3 is S-attributed and L-attributed",
+      "D": "Rule 1 is S-attributed and not L-attributed; Rule 2 is not S-attributed and\nis L-attributed; Rule 3 is S-attributed and L-attributed\nOrganising Institute: IIT Roorkee Page 19 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "C"
+  },
+  {
+    "question_number": 23,
+    "question": "Consider a network that uses Ethernet and IPv4. Assume that IPv4 headers do not\nuse any options field. Each Ethernet frame can carry a maximum of 1500 bytes in\nits data field. A UDP segment is transmitted. The payload (data) in the UDP\nsegment is 7488 bytes.\nWhich ONE of the following choices has the CORRECT total number of fragments\ntransmitted and the size of the last fragment including IPv4 header?",
+    "options": {
+      "A": "5 fragments, 1488 bytes",
+      "B": "6 fragments, 88 bytes",
+      "C": "6 fragments, 108 bytes",
+      "D": "6 fragments, 116 bytes"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 24,
+    "question": "Which ONE of the following languages is accepted by a deterministic pushdown\nautomaton?",
+    "options": {
+      "A": "Any regular language.",
+      "B": "Any context-free language.",
+      "C": "Any language accepted by a non-deterministic pushdown automaton.",
+      "D": "Any decidable language.\nOrganising Institute: IIT Roorkee Page 20 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "A"
+  },
+  {
+    "question_number": 25,
+    "question": "Let 𝐺 ,𝐺 be Context Free Grammars (CFGs) and 𝑅 be a regular expression. For a\n1 2\ngrammar 𝐺, let 𝐿(𝐺) denote the language generated by 𝐺.\nWhich ONE among the following questions is decidable?",
+    "options": {
+      "A": "Is 𝐿(𝐺 ) = 𝐿(𝐺 )?\n1 2",
+      "B": "Is 𝐿(𝐺 )∩ 𝐿(𝐺 ) = ∅?\n1 2",
+      "C": "Is 𝐿(𝐺 ) = 𝐿(𝑅)?\n1",
+      "D": "Is 𝐿(𝐺 ) = ∅?\n1"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 26,
+    "question": "Processes 𝑃1, 𝑃2, 𝑃3, 𝑃4 arrive in that order at times 0, 1, 2, and 8 milliseconds\nrespectively, and have execution times of 10, 13, 6, and 9 milliseconds respectively.\nShortest Remaining Time First (SRTF) algorithm is used as the CPU scheduling\npolicy. Ignore context switching times.\nWhich ONE of the following correctly gives the average turnaround time of the four\nprocesses in milliseconds?",
+    "options": {
+      "A": "22",
+      "B": "15",
+      "C": "37",
+      "D": "19\nOrganising Institute: IIT Roorkee Page 21 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 27,
+    "question": "An audit of a banking transactions system has found that on an earlier occasion, two\njoint holders of account 𝐴 attempted simultaneous transfers of Rs. 10000 each from\naccount 𝐴 to account 𝐵. Both transactions read the same value, Rs. 11000, as the\ninitial balance in 𝐴 and were allowed to go through. 𝐵 was credited Rs. 10000 twice.\n𝐴 was debited only once and ended up with a balance of Rs. 1000.\nWhich of the following properties is/are certain to have been violated by the\nsystem?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "type": "MSQ",
+    "marks": 1,
+    "answer": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 28,
+    "question": "Which of the following is/are part of an Instruction Set Architecture of a processor?",
+    "options": {
+      "A": "The size of the cache memory",
+      "B": "The clock frequency of the processor",
+      "C": "The number of cache memory levels",
+      "D": "The total number of registers\nOrganising Institute: IIT Roorkee Page 22 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 1,
+    "answer": "D"
+  },
+  {
+    "question_number": 29,
+    "question": "Which of the following statements regarding Breadth First Search (BFS) and\nDepth First Search (DFS) on an undirected simple graph G is/are TRUE?",
+    "options": {
+      "A": "A DFS tree of 𝐺 is a Shortest Path tree of 𝐺.",
+      "B": "Every non-tree edge of G with respect to a DFS tree is a forward/back edge.",
+      "C": "If (𝑢,𝑣) is a non-tree edge of G with respect to a BFS tree, then the distances from\nthe source vertex 𝑠 to 𝑢 and 𝑣 in the BFS tree are within ±1 of each other.",
+      "D": "Both BFS and DFS can be used to find the connected components of G.\nOrganising Institute: IIT Roorkee Page 23 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 1,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 30,
+    "question": "Consider the two lists List I and List II given below:\nList I List II\n(i) Context free languages (a) Closed under union\n(ii) Recursive languages (b) Not closed under complementation\n(iii) Regular languages (c) Closed under intersection\nFor matching of items in List I with those in List II, which of the following\noption(s) is/are CORRECT?",
+    "options": {
+      "A": "(i) – (a), (ii) – (b), and (iii) – (c)",
+      "B": "(i) – (b), (ii) – (a), and (iii) – (c)",
+      "C": "(i) – (b), (ii) – (c), and (iii) – (a)",
+      "D": "(i) – (a), (ii) – (c), and (iii) – (b)\nOrganising Institute: IIT Roorkee Page 24 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 1,
+    "answer": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 31,
+    "question": "Consider the following logic circuit diagram.\nWhich is/are the CORRECT option(s) for the output function 𝐹?",
+    "options": {
+      "A": "𝑋̅̅̅ ̅𝑌̅",
+      "B": "𝑋̅ +𝑌̅ + 𝑋𝑌̅",
+      "C": "𝑋̅̅̅ ̅𝑌̅ +𝑋̅ + 𝑋𝑌̅",
+      "D": "𝑋 + 𝑌̅"
+    },
+    "type": "MSQ",
+    "marks": 1,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 32,
+    "question": "The following two signed 2’s complement numbers (multiplicand M and\nmultiplier Q) are being multiplied using Booth’s algorithm:\nM: 1100 1101 1110 1101 and Q: 1010 0100 1010 1010\nThe total number of addition and subtraction operations to be performed is\n___________. (Answer in integer)\nOrganising Institute: IIT Roorkee Page 25 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 1,
+    "answer": "13 to 13"
+  },
+  {
+    "question_number": 33,
+    "question": "int x=126,y=105;\ndo {\nif(x>y) x=x-y;\nelse y=y-x;\n} while(x!=y);\nprintf(\"%d\",x);\nThe output of the given C code segment is ________. (Answer in integer)",
+    "options": {},
+    "type": "NAT",
+    "marks": 1,
+    "answer": "21 to 21"
+  },
+  {
+    "question_number": 34,
+    "question": "In a 4-bit ripple counter, if the period of the waveform at the last flip-flop is 64\nmicroseconds, then the frequency of the ripple counter in kHz is ________. (Answer\nin integer)",
+    "options": {},
+    "type": "NAT",
+    "marks": 1,
+    "answer": "250 to 250"
+  },
+  {
+    "question_number": 35,
+    "question": "Suppose the values 10,−4,15,30,20,5,60,19 are inserted in that order into an\ninitially empty binary search tree. Let 𝑇 be the resulting binary search tree.\nThe number of edges in the path from the node containing 19 to the root node of 𝑇\nis ___________. (Answer in integer)\nOrganising Institute: IIT Roorkee Page 26 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 1,
+    "answer": "4 to 4"
+  },
+  {
+    "question_number": 36,
+    "question": "Suppose we are transmitting frames between two nodes using Stop-and-Wait\nprotocol. The frame size is 3000 bits. The transmission rate of the channel is 2000\nbps (bits/second) and the propagation delay between the two nodes is 100\nmilliseconds. Assume that the processing times at the source and destination are\nnegligible. Also, assume that the size of the acknowledgement packet is negligible.\nWhich ONE of the following most accurately gives the channel utilization for the\nabove scenario in percentage?",
+    "options": {
+      "A": "88.23",
+      "B": "93.75",
+      "C": "85.44",
+      "D": "66.67\nOrganising Institute: IIT Roorkee Page 27 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "A"
+  },
+  {
+    "question_number": 37,
+    "question": "Let 𝐺 be an edge-weighted undirected graph with positive edge weights. Suppose a\npositive constant 𝛼 is added to the weight of every edge.\nWhich ONE of the following statements is TRUE about the minimum spanning\ntrees (MSTs) and shortest paths (SPs) in 𝐺 before and after the edge weight update?",
+    "options": {
+      "A": "Every MST remains an MST, and every SP remains an SP.",
+      "B": "MSTs need not remain MSTs, and every SP remains an SP.",
+      "C": "Every MST remains an MST, and SPs need not remain SPs.",
+      "D": "MSTs need not remain MSTs, and SPs need not remain SPs.\nOrganising Institute: IIT Roorkee Page 28 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "C"
+  },
+  {
+    "question_number": 38,
+    "question": "A meld operation on two instances of a data structure combines them into one single\ninstance of the same data structure. Consider the following data structures:\nP: Unsorted doubly linked list with pointers to the head node and tail node\nof the list.\nQ: Min-heap implemented using an array.\nR: Binary Search Tree.\nWhich ONE of the following options gives the worst-case time complexities for\nmeld operation on instances of size 𝑛 of these data structures?",
+    "options": {
+      "A": "P: Θ(1), Q: Θ(𝑛), R: Θ(𝑛)",
+      "B": "P: Θ(1), Q: Θ(𝑛log𝑛), R: Θ(𝑛)",
+      "C": "P: Θ(𝑛), Q: Θ(𝑛log𝑛), R: Θ(𝑛2)",
+      "D": "P: Θ(1), Q: Θ(𝑛), R: Θ(𝑛log𝑛)\nOrganising Institute: IIT Roorkee Page 29 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "A"
+  },
+  {
+    "question_number": 39,
+    "question": "For a direct-mapped cache, 4 bits are used for the tag field and 12 bits are used to\nindex into a cache block. The size of each cache block is one byte. Assume that\nthere is no other information stored for each cache block.\nWhich ONE of the following is the CORRECT option for the sizes of the main\nmemory and the cache memory in this system (byte addressable), respectively?",
+    "options": {
+      "A": "64 KB and 4 KB",
+      "B": "128 KB and 16 KB",
+      "C": "64 KB and 8 KB",
+      "D": "128 KB and 6 KB"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "A"
+  },
+  {
+    "question_number": 40,
+    "question": "Given a Context-Free Grammar 𝐺 as follows:\n𝑆 → 𝐴𝑎 | 𝑏𝐴𝑐 | 𝑑𝑐 | 𝑏𝑑𝑎\n𝐴 → 𝑑\nWhich ONE of the following statements is TRUE?",
+    "options": {
+      "A": "𝐺 is neither LALR(1) nor SLR(1)",
+      "B": "𝐺 is CLR(1), not LALR(1)",
+      "C": "𝐺 is LALR(1), not SLR(1)",
+      "D": "𝐺 is LALR(1), also SLR(1)\nOrganising Institute: IIT Roorkee Page 30 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "C"
+  },
+  {
+    "question_number": 41,
+    "question": "An array 𝐴 of length 𝑛 with distinct elements is said to be bitonic if there is an index\n1 ≤ 𝑖 ≤ 𝑛 such that 𝐴[1..𝑖] is sorted in the non-decreasing order and 𝐴[𝑖 +1 ..𝑛]\nis sorted in the non-increasing order.\nWhich ONE of the following represents the best possible asymptotic bound for the\nworst-case number of comparisons by an algorithm that searches for an element in\na bitonic array 𝐴?",
+    "options": {
+      "A": "Θ(𝑛)",
+      "B": "Θ(1)",
+      "C": "Θ(log2𝑛)",
+      "D": "Θ(log𝑛)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "D"
+  },
+  {
+    "question_number": 42,
+    "question": "Let ℱ be the set of all functions from {1,…,𝑛} to {0,1}. Define\nthe binary relation ≼ on ℱ as follows:\n∀𝑓,𝑔 ∈ ℱ, 𝑓 ≼ 𝑔 if and only if ∀𝑥 ∈ {1,…,𝑛}, 𝑓(𝑥) ≤ 𝑔(𝑥), where 0 ≤ 1.\nWhich of the following statement(s) is/are TRUE?",
+    "options": {
+      "A": "≼ is a symmetric relation",
+      "B": "(ℱ,≼ ) is a partial order",
+      "C": "(ℱ,≼ ) is a lattice",
+      "D": "≼ is an equivalence relation\nOrganising Institute: IIT Roorkee Page 31 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 43,
+    "question": "Given the following Karnaugh Map for a Boolean function 𝐹(𝑤,𝑥,𝑦,𝑧):\nWhich one or more of the following Boolean expression(s) represent(s) 𝐹?",
+    "options": {
+      "A": "𝑤̅𝑥̅𝑦̅𝑧̅+𝑤𝑥̅𝑦̅𝑧̅+𝑤̅𝑥̅𝑦𝑧̅+𝑤𝑥̅𝑦𝑧̅+𝑥𝑧",
+      "B": "𝑤̅𝑥̅𝑦̅𝑧̅+𝑤̅𝑥̅𝑦𝑧̅+𝑤𝑥̅𝑦𝑧+𝑥𝑧",
+      "C": "𝑤̅𝑥̅𝑦̅𝑧̅+𝑤𝑥̅𝑦̅𝑧̅+𝑤𝑥̅𝑦̅𝑧+𝑥𝑧",
+      "D": "𝑥̅𝑧̅+𝑥𝑧\nOrganising Institute: IIT Roorkee Page 32 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "A",
+      "D"
+    ]
+  },
+  {
+    "question_number": 44,
+    "question": "Consider a system of linear equations 𝑃𝑋 = 𝑄 where 𝑃 ∈ ℝ3×3 and Q ∈ ℝ3×1.\nSuppose 𝑃 has an LU decomposition, 𝑃 = 𝐿𝑈, where\n1 0 0 𝑢 𝑢 𝑢\n11 12 13\n𝐿 = [𝑙 1 0] and 𝑈 = [ 0 𝑢 𝑢 ].\n21 22 23\n𝑙 𝑙 1 0 0 𝑢\n31 32 33\nWhich of the following statement(s) is/are TRUE?",
+    "options": {
+      "A": "The system 𝑃𝑋 = 𝑄 can be solved by first solving 𝐿𝑌 = 𝑄 and then 𝑈𝑋 = 𝑌.",
+      "B": "If 𝑃 is invertible, then both 𝐿 and 𝑈 are invertible.",
+      "C": "If 𝑃 is singular, then at least one of the diagonal elements of 𝑈 is zero.",
+      "D": "If 𝑃 is symmetric, then both 𝐿 and 𝑈 are symmetric.\nOrganising Institute: IIT Roorkee Page 33 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 45,
+    "question": "Consider a stack data structure into which we can PUSH and POP records. Assume\nthat each record pushed in the stack has a positive integer key and that all keys are\ndistinct.\nWe wish to augment the stack data structure with an 𝑂(1) time MIN operation that\nreturns a pointer to the record with smallest key present in the stack\n1) without deleting the corresponding record, and\n2) without increasing the complexities of the standard stack operations.\nWhich one or more of the following approach(es) can achieve it?",
+    "options": {
+      "A": "Keep with every record in the stack, a pointer to the record with the smallest key\nbelow it.",
+      "B": "Keep a pointer to the record with the smallest key in the stack.",
+      "C": "Keep an auxiliary array in which the key values of the records in the stack are\nmaintained in sorted order.",
+      "D": "Keep a Min-Heap in which the key values of the records in the stack are maintained.\nOrganising Institute: IIT Roorkee Page 34 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "A"
+  },
+  {
+    "question_number": 46,
+    "question": "Consider the following relational schema along with all the functional dependencies\nthat hold on them.\nR1(A, B, C, D, E): { 𝐷 → 𝐸, 𝐸𝐴 → 𝐵, 𝐸𝐵 → 𝐶}\nR2(A, B, C, D): { 𝐴 → 𝐷, 𝐴 → 𝐵, 𝐶 → 𝐴}\nWhich of the following statement(s) is/are TRUE?",
+    "options": {
+      "A": "R1 is in 3NF",
+      "B": "R2 is in 3NF",
+      "C": "R1 is NOT in 3NF",
+      "D": "R2 is NOT in 3NF\nOrganising Institute: IIT Roorkee Page 35 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 47,
+    "question": "Consider a demand paging system with three frames, and the following page\nreference string: 1 2 3 4 5 4 1 6 4 5 1 3 2. The contents of the frames are as follows\ninitially and after each reference (from left to right):\ninitially after\n- 1* 2* 3* 4* 5* 4 1 6* 4 5 1* 3* 2*\n- 1 1 1 1 1 1 1 6 6 6 6 6 2\n- - 2 2 4 4 4 4 4 4 4 1 1 1\n- - - 3 3 5 5 5 5 5 5 5 3 3\nThe *-marked references cause page replacements.\nWhich one or more of the following could be the page replacement policy/policies\nin use?",
+    "options": {
+      "A": "Least Recently Used page replacement policy",
+      "B": "Least Frequently Used page replacement policy",
+      "C": "Most Frequently Used page replacement policy",
+      "D": "Optimal page replacement policy\nOrganising Institute: IIT Roorkee Page 36 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "D"
+  },
+  {
+    "question_number": 48,
+    "question": "𝑃 = {𝑃 ,𝑃 ,𝑃 ,𝑃 } consists of all active processes in an operating system.\n1 2 3 4\n𝑅 = {𝑅 ,𝑅 ,𝑅 ,𝑅 } consists of single instances of distinct types of resources in the\n1 2 3 4\nsystem.\nThe resource allocation graph has the following assignment and claim edges.\nAssignment edges: 𝑅 → 𝑃 , 𝑅 → 𝑃 , 𝑅 → 𝑃 , 𝑅 → 𝑃 (the assignment edge\n1 1 2 2 3 3 4 4\n𝑅 → 𝑃 means resource 𝑅 is assigned to process 𝑃 , and so on for others)\n1 1 1 1\nClaim edges: 𝑃 → 𝑅 , 𝑃 → 𝑅 , 𝑃 → 𝑅 , 𝑃 → 𝑅 , 𝑃 → 𝑅 (the claim edge\n1 2 2 3 3 1 2 4 4 2\n𝑃 → 𝑅 means process 𝑃 is waiting for resource 𝑅 , and so on for others)\n1 2 1 2\nWhich of the following statement(s) is/are CORRECT?",
+    "options": {
+      "A": "Aborting 𝑃 makes the system deadlock free.\n1",
+      "B": "Aborting 𝑃 makes the system deadlock free.\n3",
+      "C": "Aborting 𝑃 makes the system deadlock free.\n2",
+      "D": "Aborting 𝑃 and 𝑃 makes the system deadlock free.\n1 4\nOrganising Institute: IIT Roorkee Page 37 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 49,
+    "question": "Three floating point numbers 𝑋,𝑌, and 𝑍 are stored in three registers R , R , and\nX Y\nR , respectively in IEEE 754 single precision format as given below in\nZ\nhexadecimal:\nR = 0xC1100000, R = 0x40C00000, and R = 0x41400000\nX Y Z\nWhich of the following option(s) is/are CORRECT?",
+    "options": {
+      "A": "4(𝑋+𝑌) + 𝑍 = 0",
+      "B": "2𝑌 – 𝑍 = 0",
+      "C": "4𝑋 + 3𝑍 = 0",
+      "D": "𝑋+𝑌+𝑍 = 0"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "question_number": 50,
+    "question": "Which of the following Boolean algebraic equation(s) is/are CORRECT?",
+    "options": {
+      "A": "𝐴̅ 𝐵 𝐶 +𝐴 𝐵̅ 𝐶̅ + 𝐴̅ 𝐵̅ 𝐶̅ +𝐴 𝐵̅ 𝐶 + 𝐴 𝐵 𝐶 = 𝐵 𝐶 + 𝐵̅ 𝐶̅ + 𝐴̅ 𝐵̅",
+      "B": "𝐴 𝐵 +𝐴̅ 𝐶 +𝐵 𝐶 = 𝐴 𝐵 + 𝐴̅ 𝐶",
+      "C": "(𝐴 + 𝐶) (𝐴̅ +𝐵) = 𝐴 𝐵 + 𝐴̅ 𝐶",
+      "D": "( ̅̅ 𝐴 ̅̅ ̅ + ̅̅̅ ̅ 𝐵̅̅̅ ̅ + ̅̅̅ ̅ 𝐷̅̅̅ ) ̅ ̅ ( ̅ 𝐶 ̅̅ ̅ + ̅̅̅ 𝐷 ̅̅ ) ̅̅ ( ̅ 𝐴 ̅̅̅̅ ̅ + ̅̅̅ 𝐶 ̅̅ ̅̅ + ̅̅̅ 𝐷 ̅̅ ) ̅̅ ( ̅̅ 𝐴 ̅ ̅̅ + ̅̅̅ 𝐵 ̅̅ ̅̅ + ̅̅ ̅ 𝐷 ̅̅̅̅ ) = 𝐴̅ 𝐷 + 𝐶̅ 𝐷̅\nOrganising Institute: IIT Roorkee Page 38 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 51,
+    "question": "Consider two grammars 𝐺 and 𝐺 with the production rules given below:\n1 2\n𝐺 : 𝑆 → 𝑖𝑓 𝐸 𝑡ℎ𝑒𝑛 𝑆 | 𝑖𝑓 𝐸 𝑡ℎ𝑒𝑛 𝑆 𝑒𝑙𝑠𝑒 𝑆 | 𝑎\n1\n𝐸 → 𝑏\n𝐺 :𝑆 → 𝑖𝑓 𝐸 𝑡ℎ𝑒𝑛 𝑆 | 𝑀\n2\n𝑀 → 𝑖𝑓 𝐸 𝑡ℎ𝑒𝑛 𝑀 𝑒𝑙𝑠𝑒 𝑆 | 𝑐\n𝐸 → 𝑏\nwhere 𝑖𝑓,𝑡ℎ𝑒𝑛,𝑒𝑙𝑠𝑒,𝑎,𝑏,𝑐 are the terminals.\nWhich of the following option(s) is/are CORRECT?",
+    "options": {
+      "A": "𝐺 is not 𝐿𝐿(1) and 𝐺 is 𝐿𝐿(1).\n1 2",
+      "B": "𝐺 is 𝐿𝐿(1) and 𝐺 is not 𝐿𝐿(1).\n1 2",
+      "C": "𝐺 and 𝐺 are not 𝐿𝐿(1).\n1 2",
+      "D": "𝐺 and 𝐺 are ambiguous.\n1 2\nOrganising Institute: IIT Roorkee Page 39 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 52,
+    "question": "Let Σ = {𝑎,𝑏,𝑐}. For 𝑥 ∈ Σ∗, and 𝛼 ∈ Σ, let # (𝑥) denote the number of\n𝛼\noccurrences of 𝛼 in 𝑥.\nWhich one or more of the following option(s) define(s) regular language(s)?",
+    "options": {
+      "A": "{𝑎𝑚𝑏𝑛 | 𝑚,𝑛 ≥ 0}",
+      "B": "{𝑎,𝑏}∗ ∩{𝑎𝑚𝑏𝑛𝑐𝑚−𝑛 | 𝑚 ≥ 𝑛 ≥ 0}",
+      "C": "{𝑤 | 𝑤 ∈ {𝑎,𝑏}∗,# (𝑤) ≡ 2 (mod 7),and # (𝑤) ≡ 3 (mod 9)}\n𝑎 𝑏",
+      "D": "{𝑤 | 𝑤 ∈ {𝑎,𝑏}∗,# (𝑤) ≡ 2 (mod 7),and # (𝑤) = # (𝑤)}\n𝑎 𝑎 𝑏\nOrganising Institute: IIT Roorkee Page 40 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "question_number": 53,
+    "question": "Consider the database transactions T1 and T2, and data items X and Y. Which of\nthe schedule(s) is/are conflict serializable?\nTransaction T1\nTransaction T2\nR1(X)\nW2(X)\nW1(Y)\nW2(Y)\nR1(X)\nCOMMIT(T2)\nW1(X)\nCOMMIT(T1)",
+    "options": {
+      "A": "R1(X), W2(X), W1(Y), W2(Y), R1(X), W1(X), COMMIT(T2), COMMIT(T1)",
+      "B": "W2(X), R1(X), W2(Y), W1(Y), R1(X), COMMIT(T2), W1(X), COMMIT(T1)",
+      "C": "R1(X), W1(Y), W2(X), W2(Y), R1(X), W1(X), COMMIT(T1), COMMIT(T2)",
+      "D": "W2(X), R1(X), W1(Y), W2(Y), R1(X), COMMIT(T2), W1(X), COMMIT(T1)\nOrganising Institute: IIT Roorkee Page 41 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MCQ",
+    "marks": 2,
+    "answer": "B"
+  },
+  {
+    "question_number": 54,
+    "question": "Consider the following relational schema:\nStudents (rollno: integer, name: string, age: integer, cgpa: real)\nCourses (courseno: integer, cname: string, credits: integer)\nEnrolled (rollno: integer, courseno: integer, grade: string)\nWhich of the following options is/are correct SQL query/queries to retrieve the\nnames of the students enrolled in course number (i.e., courseno) 1470?",
+    "options": {
+      "A": "SELECT S.name\nFROM Students S\nWHERE EXISTS (SELECT * FROM Enrolled E\nWHERE E.courseno = 1470\nAND E.rollno = S.rollno);",
+      "B": "SELECT S.name\nFROM Students S\nWHERE SIZEOF (SELECT * FROM Enrolled E\nWHERE E.courseno = 1470\nAND E.rollno = S.rollno) > 0;",
+      "C": "SELECT S.name\nFROM Students S\nWHERE 0 < (SELECT COUNT(*)\nFROM Enrolled E\nWHERE E.courseno = 1470\nAND E.rollno = S.rollno);",
+      "D": "SELECT S.name\nFROM Students S NATURAL JOIN Enrolled E\nWHERE E.courseno = 1470;\nOrganising Institute: IIT Roorkee Page 42 of 48\nComputer Science and Information Technology (CS2)"
+    },
+    "type": "MSQ",
+    "marks": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "question_number": 55,
+    "question": "Given a computing system with two levels of cache (L1 and L2) and a main\nmemory. The first level (L1) cache access time is 1 nanosecond (ns) and the “hit\nrate” for L1 cache is 90% while the processor is accessing the data from L1 cache.\nWhereas, for the second level (L2) cache, the “hit rate” is 80% and the “miss\npenalty” for transferring data from L2 cache to L1 cache is 10 ns. The “miss\npenalty” for the data to be transferred from main memory to L2 cache is 100 ns.\nThen the average memory access time in this system in nanoseconds is\n___________ . (rounded off to one decimal place)\nA 5-stage instruction pipeline has stage delays of 180, 250, 150, 170, and 250,\nrespectively, in nanoseconds. The delay of an inter-stage latch is 10 nanoseconds.",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "4.0 to 4.0"
+  },
+  {
+    "question_number": 56,
+    "question": "Assume that there are no pipeline stalls due to branches and other hazards. The time\ntaken to process 1000 instructions in microseconds is __________ . (rounded off to\ntwo decimal places)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "260.20 to 261.20"
+  },
+  {
+    "question_number": 57,
+    "question": "In a B+- tree where each node can hold at most four key values, a root to leaf path\nconsists of the following nodes:\nA = (49, 77, 83, -), B = (7, 19, 33, 44), C = (20*, 22*, 25*, 26*)\nThe *-marked keys signify that these are data entries in a leaf.\nAssume that a pointer between keys 𝑘 and 𝑘 points to a subtree containing keys\n1 2\nin [𝑘 ,𝑘 ), and that when a leaf is created, the smallest key in it is copied up into\n1 2\nits parent.\nA record with key value 23 is inserted into the B+- tree.\nThe smallest key value in the parent of the leaf that contains 25* is __________.\n(Answer in integer)\nOrganising Institute: IIT Roorkee Page 43 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "33 to 33"
+  },
+  {
+    "question_number": 58,
+    "question": "A computer system supports a logical address space of 232 bytes. It uses two-level\nhierarchical paging with a page size of 4096 bytes. A logical address is divided into\na 𝑏-bit index to the outer page table, an offset within the page of the inner page\ntable, and an offset within the desired page. Each entry of the inner page table uses\neight bytes. All the pages in the system have the same size.\nThe value of 𝑏 is ___________ . (Answer in integer)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "11 to 11"
+  },
+  {
+    "question_number": 59,
+    "question": "Consider the following algorithm someAlgo that takes an undirected graph 𝐺 as\ninput.\nsomeAlgo(𝐺)\n1. Let 𝑣 be any vertex in 𝐺. Run BFS on 𝐺 starting at\n𝑣. Let 𝑢 be a vertex in 𝐺 at maximum distance from\n𝑣 as given by the BFS.\n2. Run BFS on 𝐺 again with 𝑢 as the starting vertex.\nLet 𝑧 be the vertex at maximum distance from 𝑢 as\ngiven by the BFS.\n3. Output the distance between 𝑢 and 𝑧 in 𝐺.\nThe output of someAlgo(𝑇) for the tree shown in the given figure is\n___________. (Answer in integer)\nOrganising Institute: IIT Roorkee Page 44 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "6 to 6"
+  },
+  {
+    "question_number": 60,
+    "question": "Let Σ = {1,2,3,4}. For 𝑥 ∈ Σ∗, let 𝑝𝑟𝑜𝑑(𝑥) be the product of symbols in\n𝑥 modulo 7. We take 𝑝𝑟𝑜𝑑(𝜖) = 1, where 𝜖 is the null string.\nFor example, 𝑝𝑟𝑜𝑑(124) = (1×2×4) mod 7 = 1.\nDefine 𝐿 = {𝑥 ∈ Σ∗ | 𝑝𝑟𝑜𝑑(𝑥) = 2}.\nThe number of states in a minimum state DFA for 𝐿 is ___________. (Answer in\ninteger)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "6 to 6"
+  },
+  {
+    "question_number": 61,
+    "question": "An application executes 6.4×108 number of instructions in 6.3 seconds. There are\nfour types of instructions, the details of which are given in the table. The duration\nof a clock cycle in nanoseconds is _________. (rounded off to one decimal place)\nInstruction type Clock cycles required per Number of instructions\ninstruction (CPI) executed\nBranch 2 2.25×108\nLoad 5 1.20×108\nStore 4 1.65×108\nArithmetic 3 1.30×108\nOrganising Institute: IIT Roorkee Page 45 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "3.0 to 3.0"
+  },
+  {
+    "question_number": 62,
+    "question": "Consider the following C program:\n#include <stdio.h>\nint main(){\nint a;\nint arr[5] = {30,50,10};\nint *ptr;\nptr = &arr[0] + 1;\na = *ptr;\n(*ptr)++;\nptr++;\nprintf(\"%d\", a + (*ptr) + arr[1]);\nreturn 0;\n}\nThe output of the above program is ___________. (Answer in integer)\nOrganising Institute: IIT Roorkee Page 46 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "111 to 111"
+  },
+  {
+    "question_number": 63,
+    "question": "Consider the following C program:\n#include <stdio.h>\nint g(int n) {\nreturn (n+10);\n}\nint f(int n) {\nreturn g(n*2);\n}\nint main() {\nint sum, n;\nsum=0;\nfor (n=1; n<3; n++)\nsum += g(f(n));\nprintf (\"%d\", sum);\nreturn 0;\n}\nThe output of the given C program is ________. (Answer in integer)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "46 to 46"
+  },
+  {
+    "question_number": 64,
+    "question": "A quadratic polynomial (𝑥− 𝛼)(𝑥−𝛽) over complex numbers is said to be square\ninvariant if (𝑥− 𝛼)(𝑥−𝛽) = (𝑥−𝛼2)(𝑥−𝛽2). Suppose from the set of all\nsquare invariant quadratic polynomials we choose one at random.\nThe probability that the roots of the chosen polynomial are equal is __________.\n(rounded off to one decimal place)\nOrganising Institute: IIT Roorkee Page 47 of 48\nComputer Science and Information Technology (CS2)",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "0.5 to 0.5"
+  },
+  {
+    "question_number": 65,
+    "question": "The unit interval (0,1) is divided at a point chosen uniformly distributed over (0,1)\nin ℝ into two disjoint subintervals.\nThe expected length of the subinterval that contains 0.4 is ___________. (rounded\noff to two decimal places)\nOrganising Institute: IIT Roorkee Page 48 of 48",
+    "options": {},
+    "type": "NAT",
+    "marks": 2,
+    "answer": "0.70 to 0.80"
+  }
+]

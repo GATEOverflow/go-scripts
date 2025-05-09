@@ -1,0 +1,34 @@
+alias: parse-gate-question
+automation_alias: script
+automation_uid: 5b4e0237da074764
+category: GATE Dataset Processing
+deps: []
+new_env_keys:
+  - MLC_GATE_QUESTION_PDF_PATH
+  - MLC_GATE_ANSWER_PDF_PATH
+  - MLC_GATE_OUTPUT_JSON_PATH
+new_state_keys:
+  - questions
+  - answers
+tags:
+  - parse-gate-question
+  - parse
+  - gate
+  - questions
+  - dataset
+tests:
+  run_inputs: []
+input_mapping:
+  question_pdf: MLC_GATE_QUESTION_PDF_PATH
+  answer_pdf: MLC_GATE_ANSWER_PDF_PATH
+  output_json: MLC_GATE_OUTPUT_JSON_PATH
+uid: 8fe2944512654e81
+variations:
+  gate:
+    group: question-source
+    default_variations:
+      year: year.2025
+    env:
+      MLC_GATE_QUESTION_PDF_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/paper.pdf
+      MLC_GATE_ANSWER_PDF_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/key.pdf
+      MLC_GATE_OUTPUT_JSON_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/output.json
