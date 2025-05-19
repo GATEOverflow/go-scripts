@@ -7,14 +7,15 @@ from datetime import datetime
 def preprocess(i):
     env = i['env']
     automation = i['automation']
-    os_info = i['os_info']
     mlc = automation.action_object
 
     questions_file = env['MLC_GATE_QUESTIONS_JSON_FILE_PATH']
-    with open(questions_file, 'r') as f:
+    print(questions_file)
+    with open(questions_file,  encoding='utf-8') as f:
         questions = json.load(f)
 
     gemini_model = env.get('MLC_GEMINI_MODEL', 'gemini-2.0-flash')
+    ques_type = env.get('MLC_QUESTION_TYPE', 'MCQ')
     gemini_api_key = env['MLC_GEMINI_API_KEY']
 
     system_prompt = """You are an expert GATE Computer Science assistant. For every question, provide only the final answer in a strict format:
@@ -30,11 +31,14 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
     state = {}
     count = 1
     for question in questions:
+        if question['question_type'] != ques_type:
+            continue
+    
         question_content = question['content'].replace('"', '\\"')
         user_prompt = f"""Question Text: {question_content}, Question Type: {question['question_type']}"""
         state['user_prompt'] = user_prompt
         state['system_prompt'] = system_prompt
-        print(f"Analyzing question: #######{count+1}\n")
+        print(f"Analyzing question: #######{count}\n")
         r = mlc.access({
             'action': 'run',
             'target': 'script',
@@ -46,14 +50,15 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
 
         if r['return'] > 0:
             return r
-
+        
         predicted_key = r['new_state']['MLC_GEMINI_RESPONSE']
         outs.append({
             'Question Title': question['title'],
             'Question Type': question['question_type'],
             'Actual Key': question['answer'],
-            'Predicted': predicted_key.rstrip('\n')
-
+            'Predicted': predicted_key.rstrip('\n'),
+            'Verdict': "CORRECT" if predicted_key.rstrip('\n') == question["answer"] else "WRONG",
+            'Contains Image': "YES" if "<img" in question['content'] else "NO"
         })
         count += 1
         if count%15==0:
@@ -61,18 +66,7 @@ Do not include any explanation, reasoning, labels, prefixes like "Answer:", or e
             time.sleep(60)    
 
     i['state']['output'] = outs
-
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    csv_filename = f"llama_results_{timestamp}.csv"
-    csv_path = os.path.join(script_dir, csv_filename)
-
-
-    with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=['Question Title', 'Question Type', 'Actual Key', 'Predicted'])
-        writer.writeheader()
-        writer.writerows(outs)
-
+    
     return {'return': 0}
 
 
@@ -81,6 +75,7 @@ def postprocess(i):
     env = i['env']
     gemini_model = env.get('MLC_GEMINI_MODEL', 'gemini-2.0-flash')
     output = state['output']
+    ques_type = env.get('MLC_QUESTION_TYPE', 'MCQ')
     correct = 0
     wrong = 0
     for out in output:
@@ -106,5 +101,15 @@ def postprocess(i):
     print(f""" Correct: {correct}, Wrong: {wrong}, Total: {len(output)}""")
     accuracy = correct/(correct+wrong)
     print(f"""The accuracy of {gemini_model} is, {accuracy}""")
-    
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_filename = f"gemini_results_{gemini_model}_{ques_type}.csv"
+    csv_path = os.path.join(script_dir, csv_filename)
+
+    prompt = input("Do you want to generate CSV for this run?(y/n)")
+    if prompt == "y":
+     with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=['Question Title', 'Question Type', 'Actual Key', 'Predicted', 'Verdict', 'Contains Image'])
+        writer.writeheader()
+        writer.writerows(output)
+
     return {'return': 0}
