@@ -1,5 +1,5 @@
-from mlc import utils
 import pdfplumber
+import requests
 import json
 import re
 import os
@@ -11,6 +11,16 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 warnings.filterwarnings("ignore", message=".*CropBox.*", category=UserWarning)
 warnings.filterwarnings("ignore", message=".*CropBox.*", module="pdfminer.*")
 
+# Step 0: Download paper
+def download_pdf(url, local_path):
+     # Ensure the directory exists
+    os.makedirs(os.path.dirname(os.path.expanduser(local_path)), exist_ok=True)
+    response = requests.get(url)
+    response.raise_for_status()  # Raises an error for bad status
+    with open(local_path, 'wb') as f:
+        f.write(response.content)
+    print(f"Downloaded File to {local_path}")
+
 # Step 1: Extract all text from PDFs
 def extract_text(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
@@ -18,35 +28,20 @@ def extract_text(pdf_path):
     
 # Clean the questions and answers text
 def clean_text(text: str) -> str:
-    """Clean and format text properly"""
-    # Replace special symbols 
-    text = text.replace("(cid:46)(cid:47)", "⋈")  # Join symbol
-    text = text.replace("(cid:107)", "‖")  # Norm symbol
-    text = text.replace("(cid:88)", "∑")  # Sum symbol
-    text = text.replace("(cid:48)", "′")  # Prime symbol
-    text = text.replace("(cid:54)", "≠")  # Not equal symbol
-    text = text.replace("(cid:62)", "ᵀ")  # Transpose symbol
-    text = text.replace("(cid:90)", "∫")  # Integral symbol
-    text = text.replace("(cid:98)", "⌊")  # Floor symbol
-    text = text.replace("(cid:99)", "⌋")  # Floor symbol
+    # Remove all lines that are just the CS header
+    text = re.sub(r"Computer Science and Information Technology \(CS\d+\)\n?", "", text)
+
+    # Remove lines like: Organising Institute: IIT Roorkee Page X of Y
+    text = re.sub(r"Organising Institute: IIT Roorkee Page \d+ of \d+\n?", "", text)
+    text = re.sub(r"Organising Institute:.*(?:\n|$)", "", text)
+
+    # Optional: strip excessive blank lines
+    text = re.sub(r'\n\s*\n', '\n\n', text)
     
-    # Add spaces around mathematical operators
-    text = re.sub(r'([=<>+\-*/])', r' \1 ', text)
-    
-    # Remove organizing institute footer
-    text = re.sub(r'Organizing Institute:.*?(?=\n|$)', '', text)
-    text = re.sub(r'GATE\d+.*?(?=\n|$)', '', text)
-    
-    # Fix spacing
-    text = re.sub(r'\s+', ' ', text)  # Normalize whitespace
-    text = text.replace('\\n', '\n')  # Preserve intended line breaks
-    text = re.sub(r'\n\s*\n', '\n', text)  # Remove multiple blank lines
-    
+
     return text.strip()
 
 
-
-# Step 2: Parse questions and answers into dictionary
 # Step 2: Parse answers into dictionary
 def parse_answers(answer_text):
     answers = {}
@@ -65,8 +60,6 @@ def parse_answers(answer_text):
 
 # Step 3: Parse questions
 def parse_questions(text, answer_dict):
-    # First clean up text blocks
-    text = clean_text(text)
     question_blocks = re.findall(r"(Q\.\d+[\s\S]*?)(?=Q\.\d+|\Z)", text)
     questions = []
 
@@ -79,15 +72,12 @@ def parse_questions(text, answer_dict):
         qid = f"Q{q_number}"
         content = q_match.group(2).strip()
 
-        # Extract question text before options
-        question_text = re.split(r'\([A-D]\)', content)[0].strip()
-        question_text = clean_text(question_text)
+        # Extract options
+        options = dict(re.findall(r"\((A|B|C|D)\)\s*(.*?)(?=\n\(|$)", content, re.DOTALL))
 
-        # Extract options with better formatting
-        options = {}
-        option_matches = re.findall(r'\(([A-D])\)\s*([^(]+)(?=\([A-D]\)|$)', content)
-        for opt, text in option_matches:
-            options[opt] = clean_text(text)
+        # Extract question text
+        split_match = re.split(r"\(A\)", content)
+        question_text = split_match[0].strip() if split_match else content.strip()
         
         # Skip meta text or garbage
         if question_text in {"–", "", "Carry ONE mark Each", "Carry TWO marks Each"}:
@@ -128,11 +118,25 @@ def parse_questions(text, answer_dict):
 
 def preprocess(i):
     env = i['env']
-    mlc_repo_path = env.get('MLC_REPO_PATH', '')
+
     # Get input paths from environment
-    question_pdf = env.get('MLC_GATE_QUESTION_PDF_PATH', '/home/sujith/MLC/repos/gateoverflow@go-scripts/data/paper.pdf')
-    answer_pdf = env.get('MLC_GATE_ANSWER_PDF_PATH', '/home/sujith/MLC/repos/gateoverflow@go-scripts/data/key.pdf')
-    
+    question_pdf = os.path.expanduser(env.get('MLC_GATE_QUESTION_PDF_PATH', '~/MLC/repos/local/cache/gate-exam-data/paper.pdf'))
+    answer_pdf = os.path.expanduser(env.get('MLC_GATE_ANSWER_PDF_PATH', '~/MLC/repos/local/cache/gate-exam-data/key.pdf'))
+
+    # Download the paper from site
+    questionpdf_url = env.get('MLC_GATE_QUESTION_PDF_URL', "https://github.com/user-attachments/files/20423322/CS25set2-questionPaper.pdf")
+    answerpdf_url = env.get('MLC_GATE_ANSWER_PDF_URL', "https://github.com/user-attachments/files/20423320/CS25set2-answerKey.pdf")
+    print("Downloading Question Paper PDF ..")
+    download_pdf(questionpdf_url, question_pdf)
+    print("Downloading Answer Key PDF ..")
+    download_pdf(answerpdf_url, answer_pdf)
+    # print("Downloading Question Paper PDF ..")
+    # questionpdf_url = "https://github.com/user-attachments/files/20423322/CS25set2-questionPaper.pdf"
+    # download_pdf(questionpdf_url, question_pdf)
+    # print("Downloading Answer Key PDF ..")
+    # answerpdf_url = "https://github.com/user-attachments/files/20423320/CS25set2-answerKey.pdf"
+    # download_pdf(answerpdf_url, answer_pdf)
+
     # Extract and clean text
     qtext = extract_text(question_pdf)
     cleaned_qtext = clean_text(qtext)
@@ -154,7 +158,7 @@ def postprocess(i):
     state = i['state']
     
     questions = state['questions']
-    output_path = env.get('MLC_GATE_OUTPUT_JSON_PATH', '/home/sujith/MLC/repos/gateoverflow@go-scripts/data/output.json')
+    output_path = os.path.expanduser(env.get('MLC_GATE_OUTPUT_JSON_PATH', '~/MLC/repos/local/cache/gate-exam-data/output.json'))
     
     # Ensure output directory exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

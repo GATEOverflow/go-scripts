@@ -2,10 +2,10 @@ alias: parse-gate-question
 automation_alias: script
 automation_uid: 5b4e0237da074764
 category: GATE Dataset Processing
-deps: []
+deps:
+  - name: pdfplumber
+  - name: requests
 new_env_keys:
-  - MLC_GATE_QUESTION_PDF_PATH
-  - MLC_GATE_ANSWER_PDF_PATH
   - MLC_GATE_OUTPUT_JSON_PATH
 new_state_keys:
   - questions
@@ -22,6 +22,8 @@ input_mapping:
   question_pdf: MLC_GATE_QUESTION_PDF_PATH
   answer_pdf: MLC_GATE_ANSWER_PDF_PATH
   output_json: MLC_GATE_OUTPUT_JSON_PATH
+  question_pdf_url: MLC_GATE_QUESTION_PDF_URL
+  answer_pdf_url: MLC_GATE_ANSWER_PDF_URL
 uid: 8fe2944512654e81
 variations:
   gate:
@@ -29,6 +31,4 @@ variations:
     default_variations:
       year: year.2025
     env:
-      MLC_GATE_QUESTION_PDF_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/paper.pdf
-      MLC_GATE_ANSWER_PDF_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/key.pdf
-      MLC_GATE_OUTPUT_JSON_PATH: ${MLC_REPO_PATH}/gateoverflow@go-scripts/data/output.json
+      MLC_GATE_OUTPUT_JSON_PATH: '~/MLC/repos/local/cache/gate-exam-data/output.json'
