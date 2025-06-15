@@ -4,12 +4,10 @@ import json
 import re
 import os
 import warnings
+from dotenv import load_dotenv
+load_dotenv()
 
 warnings.filterwarnings("ignore", message=".*CropBox missing.*")
-warnings.filterwarnings("ignore", category=UserWarning)
-warnings.filterwarnings("ignore", category=RuntimeWarning)
-warnings.filterwarnings("ignore", message=".*CropBox.*", category=UserWarning)
-warnings.filterwarnings("ignore", message=".*CropBox.*", module="pdfminer.*")
 
 # Step 0: Download paper
 def download_pdf(url, local_path):
@@ -116,7 +114,7 @@ def parse_questions(text, answer_dict):
 
     return questions
 
-def preprocess(i):
+def extractProcess(i):
     env = i['env']
 
     # Get input paths from environment
@@ -130,14 +128,9 @@ def preprocess(i):
     download_pdf(questionpdf_url, question_pdf)
     print("Downloading Answer Key PDF ..")
     download_pdf(answerpdf_url, answer_pdf)
-    # print("Downloading Question Paper PDF ..")
-    # questionpdf_url = "https://github.com/user-attachments/files/20423322/CS25set2-questionPaper.pdf"
-    # download_pdf(questionpdf_url, question_pdf)
-    # print("Downloading Answer Key PDF ..")
-    # answerpdf_url = "https://github.com/user-attachments/files/20423320/CS25set2-answerKey.pdf"
-    # download_pdf(answerpdf_url, answer_pdf)
 
     # Extract and clean text
+    print("Extracting text from PDFs...")
     qtext = extract_text(question_pdf)
     cleaned_qtext = clean_text(qtext)
     atext = extract_text(answer_pdf)
@@ -153,7 +146,7 @@ def preprocess(i):
     
     return {'return': 0}
 
-def postprocess(i):
+def outputProcess(i):
     env = i['env']
     state = i['state']
     
@@ -167,6 +160,12 @@ def postprocess(i):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(questions, f, indent=2, ensure_ascii=False)
     
+    print("********************************************************************************************************************************")
     print(f"Generated {output_path} with {len(questions)} questions.")
-    
+    print("********************************************************************************************************************************")
     return {'return': 0}
+
+if __name__ == "__main__":
+    i = {'env': os.environ, 'state': {}}
+    extractProcess(i)
+    outputProcess(i)

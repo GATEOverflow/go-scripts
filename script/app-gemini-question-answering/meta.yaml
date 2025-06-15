@@ -2,14 +2,10 @@ alias: gemini-gate-eval
 automation_alias: script
 automation_uid: 5b4e0237da074764
 category: GATE Evaluation
-deps: [
-  {"name": "parse-gate-question", "tags": "parse-gate-question"},
-  {"name": google.generativeai }
-]
-new_env_keys:
-  - GEMINI_API_KEY
-  - MLC_GATE_QUESTIONS_JSON_FILE_PATH
-  - MLC_GEMINI_MODEL
+deps: 
+- name: google.generativeai
+- tags: get,python3
+- tags: parse-gate-question
 new_state_keys:
   - output
   - user_prompt

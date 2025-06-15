@@ -1,12 +1,8 @@
-from mlc import utils
 import os
 import json
 import google.generativeai as genai
 import time
-
 from dotenv import load_dotenv
-
-# Load environment variables from .env file
 load_dotenv()
 
 def ask_gemini(question, options_dict, model, q_type):
@@ -72,7 +68,7 @@ def ask_gemini(question, options_dict, model, q_type):
     return answer
 
 
-def preprocess(i):
+def geminiProcess(i):
     env = i['env']
     marks = 0
     marksObtained = 0
@@ -87,7 +83,10 @@ def preprocess(i):
     total_sleep_time = 0
     process_start = time.time()
     # Configure Gemini
-    genai.configure(api_key=env['GEMINI_API_KEY'])
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        raise RuntimeError("GEMINI_API_KEY not set in environment or .env file!")
+    genai.configure(api_key=api_key)
     model = genai.GenerativeModel(model_name=env.get('MLC_GEMINI_MODEL', 'models/gemini-1.5-flash'))
 
     # Load questions
@@ -97,7 +96,7 @@ def preprocess(i):
 
     results = []
     cnt = 0
-    print("*************************************************************************************************************")
+    print("------------------------------------------------------------------------------------------------------------------------------------")
     for q in questions:
         print(f"Processing Q{q['question_number']}..")
         # print(f"Question: {q['question']}")
@@ -169,7 +168,7 @@ def preprocess(i):
             "is_correct": is_correct,
             "marks": marks,
         })
-        print("-----------------------------------------------------------------------------------------------------------------------------")
+        print("------------------------------------------------------------------------------------------------------------------------------------")
         cnt+=1
         if cnt%10==0:
             print("Pause of 1 min due to rate limiting")
@@ -180,7 +179,7 @@ def preprocess(i):
             sleep_end = time.time()
             total_sleep_time += (sleep_end - sleep_start)
             print("Resuming now!")
-            print("*************************************************************************************************************************")
+            print("********************************************************************************************************************************")
 
     i['state']['output'] = results
     process_end = time.time()
@@ -198,10 +197,10 @@ def preprocess(i):
     print(f"Total Marks Obtained: {marksObtained:.2f}")
     print(f"Total Marks: {totalMarks}")
     print(f"Total Time Taken: {total_time:.2f} seconds (Effective Time: {effective_time:.2f} seconds, Sleep Time: {total_sleep_time:.2f} seconds)")
-    print("***********************************************************************************************************************************")
+    print("*****************************************************************************************************************************************")
     return {'return': 0}
 
-def postprocess(i):
+def resultProcess(i):
     state = i['state']
     results = state['output']
 
@@ -235,3 +234,8 @@ def postprocess(i):
     print(f"| Accuracy: {accuracy:.2f}%  |")
     print("---------------------")
     return {'return': 0}
+
+if __name__ == "__main__":
+    i = {'env': os.environ, 'state': {}}
+    geminiProcess(i)
+    resultProcess(i)
